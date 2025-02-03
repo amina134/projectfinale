@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+.book-img{
+width:90%;
+
+}
+.container-information{
+    /* background-color: rgb(204, 169, 236); */
+    position: absolute;
+    top:30%;
+    padding-left:19%;
+    display: flex;
+    flex-direction: row;
+   
+
+}
+.part1{
+    flex:1;
+}
+.part2{
+    flex:2;
+}
+.book-title{
+    font-family: "Passion One";
+   font-size: 45px;
+   /* background-color: blue; */
+}
+.author-name{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+   font-size: 25px;
+   position: relative;
+   top:-3%;
+}
+.title-format{
+     font-family: "IBM Plex Sans";
+    font-weight: bold;
+   font-size: 13px;
+   position: absolute;
+   top:12%;
+
+}
+/* css for hardcover book */
+.hardcover{
+    width:22%;
+ height:10%;
+ padding:4px;
+    border:1px solid rgb(84, 83, 83);
+    border-radius: 8px;
+}
+.hardcover:hover{
+    border-color: #FF5722; 
+  
+    transform: scale(1.05);
+}
+.hardcover-text{
+    font-family: "IBM Plex Sans";
+    font-weight: normal;
+    font-size: 17px;
+    margin-left: 20px;
+    /* position: relative;
+    top:60%; */
+}
+.language{
+    color: rgb(103, 103, 103);
+    font-weight: normal;
+    margin-left: 20px;
+      position: relative;
+    top:-14%;
+}
+.hardcover-price{
+   
+    font-family: "IBM Plex Sans";
+    font-weight: bold;
+   font-size: 25x;
+    margin-left: 20px;
+      position: relative;
+    top:-35%;
+}
+/* ///////////end of css of hardcover////////////////// */
+
+/* ///// css for paperback book///////////////// */
+.paperback{
+    width:13%;
+ height:10%;
+ padding:4px;
+    border:1px solid rgb(84, 83, 83);
+    border-radius: 8px;
+    position: absolute;
+    left:60%;
+    top:16.1%;
+}
+.paperback:hover{
+    border-color: #FF5722; 
+  
+    transform: scale(1.05);
+}
+.paperback-text{
+    font-family: "IBM Plex Sans";
+    font-weight: normal;
+    font-size: 17px;
+    margin-left: 20px;
+    /* position: relative;
+    top:60%; */
+}
+
+.paperback-price{
+   
+    font-family: "IBM Plex Sans";
+    font-weight: bold;
+   font-size: 25x;
+    margin-left: 20px;
+      position: relative;
+    top:-35%;
+}
+/* ///////////end of css of paperback////////////////// */
+
+.but1{
+    width:160px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 14px;
+    position:absolute;
+    top:45%;
+    left:51.5%;
+    background-color:#000000;
+    color: white;
+    z-index: 2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 1;
+    /* visibility: hidden; */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+.description{
+   position: relative; 
+   top:15%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #0d0c0c;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #FF5722;
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.book-description{
+    position:relative;
+    top:10%;
+    right:8%;
+    padding:20px;
+    font-size: 20px;
+    line-height: 1.6;
+ 
+    margin-top: 12px;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+.author-part{
+    position:relative;
+    top:10%;
+    
+}
+.about-the-author{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #0d0c0c;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #FF5722;
+    display: inline-block;
+    padding-bottom: 1px;
+}
+.author-bio{
+    padding:20px;
+    font-size: 20px;
+    line-height: 1.6;
+    position:relative;
+    top:0%;
+    right:8%;
+
+    margin-top: 12px;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+.info{
+    position: relative;
+    top:25%;
+}

@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.nav{
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*the promotion line on top 1111111111111111*/
+.promo-notification{
+    text-align: center;
+    margin:0.5%;
+    cursor:pointer;
+}
+.notification{
+    background-color:#867070;
+    width:100%;
+    height: 5%;
+    position: absolute;
+    top:0%;
+    
+    
+}
+/* the logo  plus the search bar plus the icons*/
+.logo-plus-searchbar{
+  
+    display: flex;
+    flex-direction: row;
+   
+   
+    height:60px;
+    width:100%;
+}
+.logo{
+  background-color: #6b1a0b;
+  width:10%;
+  margin-right: 30px;
+  margin-left: 20px;
+ 
+ 
+}
+
+.logo-image{
+  width:210px;
+
+}
+.searchBar{
+  margin-left:300px ;
+  margin-top: 7px;
+
+}
+.heart {
+  display: inline-block;
+  /* background-color: #6b1a0b ; */
+ margin-left: 25px;
+}
+
+.likes {
+  font-size: 29px; 
+  margin-top: 15px;
+  opacity: 0.8;
+ 
+}
+.shopping{
+  display: inline-block;
+  /* background-color: #6b1a0b ; */
+ margin-left: 30px;
+}
+.shopping-icon{
+  font-size: 30px; 
+  margin-top: 15px;
+  opacity: 0.8;
+ 
+}
+.account{
+  display: inline-block;
+  /* background-color: #6b1a0b ; */
+ margin-left: 10px;
+}
+.account-icon{
+  font-size: 30px; 
+  margin-top: 15px;
+  opacity: 0.8;
+ 
+}
+
+
+
+
+/* .theLinks{
+    background-color: #e99b2e;
+   
+    padding-bottom :30px;
+    height: 35px;
+
+} */
+
+/* Main Navbar Styling */
+.nav-bar {
+
+  list-style-type: none;
+  padding: 10px 20px;
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+/* Nav Item Styling */
+.nav-item {
+  position: relative; /* Needed for dropdown positioning */
+}
+
+.nav-bar li a {
+  font-size: 17px;
+  font-family: "Outfit", sans-serif;
+  color: #0b0b0b; 
+  padding: 10px 15px;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-bar li a:hover {
+  color: #ffd1d1; 
+  transform: scale(1.05)
+}
+
+
+.dropdown {
+  list-style: none;
+  position: absolute;
+  top: 100%; /* Align below parent item */
+  left: 0;
+  background-color: #b6adad; /* Neutral background for dropdown */
+  display: none; /* Hidden by default */
+  padding: 10px 0;
+  margin: 0;
+  width: auto; /* Automatically adjust width */
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  border-radius: 5px; /* Rounded corners for modern design */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.nav-item:hover .dropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Dropdown Links */
+.dropdown li a {
+  color: #444; /* Darker text for readability */
+  padding: 8px 15px;
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown li a:hover {
+  background-color: #ece5e5; /* Light background on hover */
+  color: #6b1a0b; /* Matching red text on hover */
+}
+
+/* Spacing Between Items */
+.nav-bar > .nav-item {
+  margin-right: 20px;
+  z-index: 10;
+}
+
+.nav-bar > .nav-item:last-child {
+  margin-right: 0;
+}
+.link {
+  pointer-events: auto;
+  z-index: 10;
+}

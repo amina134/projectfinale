@@ -1,0 +1,222 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* ////////////////////////////////////////// BEGINNING OF PART1/////////////////////////////////////////////////////// */
+.container{
+    display: flex;
+    height:100vh;
+    max-width:100%;
+ 
+}
+
+.scroll-down{
+    height: 90vh; /* Set height to half the viewport height (or adjust to your desired size) */
+    margin: 0px;
+  overflow-y: auto; /* Enable vertical scrolling */
+
+}
+
+.part1{
+    flex: 0.65;
+    
+}
+
+
+.filter-by{
+    font-size: 30px;
+    position: relative;
+    top:-4%;
+    left:6%;
+    width: 200px;
+   margin-bottom: 0%;
+    font-family: "IBM Plex Sans"; 
+    font-weight:500;
+    /* color:#712E1E  ; */
+
+}
+.category-buttons{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* //////////////// for the price slider//////////////////// */
+.price-content{
+    display: flex;
+
+height: 40px;
+    justify-content: space-between;
+ padding:0;
+    margin: 6px 20px 20px 20px;
+  
+}
+.min-label{
+  position: relative;
+  margin-left: 2px;
+ text-align: start;
+}
+.max-label{
+  position: relative;
+
+}
+
+
+ 
+
+.slider{
+    width: 90%;
+    height: 5px;
+    position: relative;
+    top:0%;
+    margin :0 15px 25px 15px;
+    background-color: rgb(226, 226, 226);
+
+}
+.slider .thumb{
+    width:13px;
+    height: 13px;
+   border-radius: 10px;
+    cursor: pointer;
+    background: white;
+    position: relative;
+    top:-100%;
+    border: solid 0.5px #000000;
+}
+.slider .thumb:hover{
+  border:solid #272424;
+}
+.track {
+  background: #ccc; 
+  height: 6px;
+  border-radius: 10px;
+  position: absolute;
+}
+
+
+.track.track-1 {
+  background:#262220; 
+}
+
+.track {
+  transition: background 0.3s ease;
+}
+
+h5{
+    font-family: "IBM Plex Sans";
+    font-weight: normal;
+    font-size: 24px;
+    margin: 30px 20px 0px 20px;
+
+}
+.category{
+    margin-top: 0 !important;
+    margin-bottom: 14px!important ;
+}
+label {
+    font-family:'IBM Plex Sans';
+}
+
+/* ///////////////// fro the filter by category/////////////// */
+/* Style the container */
+.container1 {
+    display: block;
+    position: relative;
+    padding-left: 46px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family:'IBM Plex Sans';
+    user-select: none;
+  }
+  
+  /* Hide the default checkbox */
+  .container1 input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    margin-left: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 12px;
+    width: 12px;
+    border: 1px solid #000000;
+    border-radius: 2px;
+  }
+  
+  /* When the checkbox is checked, add a black tick */
+  .container1 input:checked ~ .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 4.6px;
+    top: -1px;
+    width: 3px;
+    height: 9px;
+    border: solid rgb(255, 251, 251); /* Tick color */
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+  }
+  
+  /* Add hover effects */
+  .container1:hover input ~ .checkmark {
+    background-color: #f0f0f0;
+  }
+  
+  /* Checked background color */
+  .container1 input:checked ~ .checkmark {
+    background-color: #000000; /* Optional: background for checked boxes */
+
+  }
+ hr{
+    margin:20px;
+  }
+  /* ///////////////// the buttons for pick a mood /////////////////////// */
+
+
+.button-filter{
+   
+    margin:5px;
+    background-color:#fef9f2;
+    color: rgb(0, 0, 0);
+ 
+     border: solid 0.7px black;
+    border-radius: 2px;
+    cursor: pointer;
+    opacity: 1;
+    font-family:'IBM Plex Sans';
+    font-size: 15px;
+  }
+ .button-filter:hover{
+  border: solid 0.7px rgb(255, 17, 17);
+  }
+.but-container{
+  margin-left:20px;
+}
+
+
+/* //////////////////////////////////// END OF PART 1 //////////////////////////////////////////////////////  */
+/* //////////////////////////////////// beginning  OF PART 2 //////////////////////////////////////////////////////  */
+
+.part2{
+  flex: 2;
+  /* background-color: blue; */
+  margin-top :23px;
+  display: flex;
+  flex-direction: column;
+ max-width: 75%;
+}
+.item{
+  display: flex;
+  flex-wrap: wrap;
+}
+.chosen{
+  width:100%;
+  height:80px;
+  /* background-color: brown; */
+}

@@ -1,0 +1,101 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.background-container {
+    position: relative;
+    height: 100vh; /* or any height you need */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    height: 100vh; 
+    background-color:#BACEC1;
+
+   
+  }
+  
+  .overlay {
+    display: flex;
+    width: 100%; /* Take full width */
+    justify-content: space-between; /* Space between the items */
+    gap: 20px; /* Optional, space between items */
+    z-index: 1; 
+  }
+  
+  .item1, .item2, .item3 {
+  
+    z-index: 2; 
+    flex: 1; /* This ensures all items take equal space */
+    display: flex;
+    justify-content: center; /* Center the book model in the div */
+    align-items: center; /* Center the book model vertically */
+    position: relative; 
+    
+  }
+  .item1{
+    flex: 1;
+  width:100vh;
+  height:100%;
+  
+
+  }
+  .item2{
+   
+    flex: 1;
+    width:50%;
+    height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    color:white;
+    
+  }
+  h2{
+   
+    font-family: "Passion One";
+    font-size: 45px;
+    margin-top: 10px;
+    text-align: center; 
+    position:relative;
+    top:9px;
+    align-self: flex-center;
+  }
+  p{
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-self: flex-center;
+    margin:30px;
+    word-wrap: break-word;
+    text-align: center;  
+  }
+  button {
+    background-color: #eceaea; 
+    color: #D7C0AE;          
+    border: none;            
+    padding: 10px 20px;      
+    text-align: center;        
+    text-decoration: none;    
+    display: inline-block;    
+    font-size: 16px;         
+    margin: 10px 0;          
+    cursor: pointer;         
+    border-radius: 5px;     
+    transition: background-color 0.3s ease; 
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  button:active {
+    background-color: #000000;
+  }
+
+
+  .item3{
+    flex: 1;
+
+  }
+  /* the added part */
+

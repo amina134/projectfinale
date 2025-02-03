@@ -1,0 +1,19 @@
+.searchBar{
+
+}
+.search{
+    width:450px;
+    height: 30px;
+    border-radius: 30px;
+    flex-grow: 1;
+    
+}
+.searchIcon{
+    position: absolute;
+   right:15px;
+   top: 12px;
+  
+}
+.search-logo{
+    position: inherit;
+}

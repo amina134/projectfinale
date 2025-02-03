@@ -1,0 +1,12 @@
+.container{
+    /* background-color: red; */
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.item{
+ 
+   margin:5px;
+   display: flex; /* Ensure the cards inside are aligned properly */
+   flex: 1 1 auto;
+}

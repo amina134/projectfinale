@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* CSS Variables */
+  :root {
+    --mobile-width: 190px;
+    --mobile-height: 260px;
+    --mobile-radius: 10px;
+    --separator-height: 500px;
+  
+    --bg: #712;
+    --mobile-bg: #fef9f2;
+    --intro-bg: #eed7d1;
+    --font-color: #807b7b;
+  
+    --transition: transform 0.7s ease-in-out;
+  }
+  
+ .book-box{
+/* background-color: #712; */
+  margin:8px;
+  padding:0px;
+  height:318px;
+  display: flex;
+  flex-direction: column; /* Default: stack elements vertically */
+  position: relative;
+ }
+ .but2{
+  width:160px;
+  height:40px;
+  position: absolute; 
+  top: 80.7%; 
+  left: 50%;
+  font-family: "IBM Plex Sans"; 
+  transform: translateX(-50%);
+
+  padding: 10px 30px 20px 20px;
+  font-size: 14px;
+ 
+  transform: translateX(-50%); 
+  
+  z-index: 10;
+  /* border:1px solid black; */
+  z-index: 2;
+  background-color:#fef9f2;
+  color: rgb(0, 0, 0);
+  
+  box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+    overflow: hidden;
+  border-radius: 2px;
+  cursor: pointer;
+  opacity: 1;
+  /* visibility: hidden; */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+ }
+  .but2:hover{
+background-color: #fef9f2;
+ } 
+ .but2:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+.button-content:hover{
+  color:white;
+}
+.but2:hover{
+  color:white;
+}
+
+.but2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    #0f0f0f 10.8%,
+    #000000  94.3%
+  );
+ 
+  transition: all 0.475s;
+}
+
+ .card-icon{
+  color:black;
+  width:26px;
+
+ }
+ .heart-icon1{
+  position: absolute; /* Allows the heart icon to be placed freely */
+  top: 10px; /* Adjust this value to move it vertically */
+  left: 93%; /* Center horizontally */
+  transform: translateX(-50%); /* Fine-tune centering */
+  z-index: 10;
+font-size: 21px;
+
+
+
+ }
+ .link{
+ 
+  order: -1;
+ }
+  
+  .mobile-layout {
+
+   position:relative;
+   top:0%;
+    width: var(--mobile-width);
+    height: var(--mobile-height);
+    border-radius: var(--mobile-radius);
+    background-color: #ebd7d7;
+    box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+    overflow: hidden;
+    perspective: 500px;
+  }
+  
+  
+  
+  /* Book Cover */
+  .book-cover {
+    position: relative;
+    height: var(--separator-height);
+    width: calc(var(--mobile-width) * 2);
+    left: -67%;
+    text-decoration: none;
+    bottom:30%;
+     background-color: #fef9f2; 
+    border-top-left-radius: var(--mobile-radius);
+    border-top-right-radius: var(--mobile-radius);
+    transform-style: preserve-3d;
+    transform-origin: 50% 40%;
+    transition: var(--transition);
+  }
+  
+  .book-top {
+
+    position: absolute;
+    border-radius: 7px;
+    width: 120px;
+    top: 110px;
+    left: 165px;
+    transform: translateZ(56.5px);
+  }
+  
+  .book-side {
+    position: absolute;
+    width:165px;
+    top: 275px;
+    left: 142px;
+    transform: translateZ(47px) rotateX(104deg);
+  }
+  
+  .book-cover:hover {
+    transform: rotateX(75deg) translateZ(3px) scale(0.75);
+  }
+  
+  .book-cover:hover + .preface {
+    transform: translateY(-400px);
+  }
+  
+  .book-cover:hover + .preface .icon {
+    transform: rotateX(180deg);
+  }
+  
+  /* Preface Section */
+  .preface {
+    position: relative;
+    height: 400px;
+    padding: 50px;
+    background-color: #fff;
+    color: var(--font-color);
+    transition: var(--transition);
+
+  }
+  .icon{
+    /* background-color: #712; */
+  align-self: end;
+  }
+  
+  .content {
+    display: flex;
+    width:150px;
+    position: relative;
+    left:-40%;
+    top:-10%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+
+    
+  }
+  
+  .title {
+    font-family: 'Quicksand', sans-serif;
+    font-size:21px;
+    margin:5px;
+    color:black;
+    word-wrap: break-word;
+    /* position: absolute;
+    top:5%;
+    left:10%; */
+    text-decoration: none;
+  }
+  
+  .author {
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    margin-left:5px;
+    /* position: absolute;
+    top:20%;
+    left:10%; */
+    margin-bottom: 20px;
+  }
+  
+  .body {
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  .body p {
+    margin-bottom: 10px;
+  }
+  
+  /* .body p:first-child {
+    margin-bottom: 15px;
+  } */
+  .price{
+    text-align: center;
+    flex:0.24;
+    font-size: 20px;
+    position: absolute;
+    top:60%;
+    color: black;
+  }
+  .genre{
+    text-align: center;
+    font-size: 30px;
+
+  }
+  .link{
+    text-decoration: none;
+    color: inherit;
+  }

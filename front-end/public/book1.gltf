@@ -1,0 +1,140 @@
+{
+	"asset":{
+		"generator":"Khronos glTF Blender I/O v4.3.47",
+		"version":"2.0"
+	},
+	"extensionsUsed":[
+		"KHR_draco_mesh_compression",
+		"KHR_materials_unlit"
+	],
+	"extensionsRequired":[
+		"KHR_draco_mesh_compression"
+	],
+	"scene":0,
+	"scenes":[
+		{
+			"name":"Scene",
+			"nodes":[
+				2
+			]
+		}
+	],
+	"nodes":[
+		{
+			"mesh":0,
+			"name":"Cube.001",
+			"translation":[
+				0.007962778210639954,
+				-0.5022220611572266,
+				-0.36566901206970215
+			]
+		},
+		{
+			"children":[
+				0
+			],
+			"name":"Collection"
+		},
+		{
+			"children":[
+				1
+			],
+			"name":"Scene Collection"
+		}
+	],
+	"materials": [
+  {
+    "name": "Material.001",
+    "pbrMetallicRoughness": {
+      "baseColorTexture": {
+        "index": 0
+      },
+      "metallicFactor": 0,
+      "roughnessFactor": 0.9
+    }
+  }
+],
+"textures": [
+  {
+    "source": 0
+  }
+],
+"images": [
+  {
+    "uri": "ifWe.jpg"
+  }
+]
+,
+	"meshes":[
+		{
+			"name":"Cube.001",
+			"primitives":[
+				{
+					"attributes":{
+						"POSITION":0,
+						"NORMAL":1,
+						"TEXCOORD_0":2
+					},
+					"extensions":{
+						"KHR_draco_mesh_compression":{
+							"bufferView":0,
+							"attributes":{
+								"POSITION":0,
+								"NORMAL":1,
+								"TEXCOORD_0":2
+							}
+						}
+					},
+					"indices":3,
+					"material":0,
+					"mode":4
+				}
+			]
+		}
+	],
+	"accessors":[
+		{
+			"componentType":5126,
+			"count":935,
+			"max":[
+				0.20292802155017853,
+				1.7679799795150757,
+				1.2001140117645264
+			],
+			"min":[
+				-0.20299337804317474,
+				-1.7683769464492798,
+				-1.262449026107788
+			],
+			"type":"VEC3"
+		},
+		{
+			"componentType":5126,
+			"count":935,
+			"type":"VEC3"
+		},
+		{
+			"componentType":5126,
+			"count":935,
+			"type":"VEC2"
+		},
+		{
+			"componentType":5123,
+			"count":2733,
+			"type":"SCALAR"
+		}
+	],
+	"bufferViews":[
+		{
+			"buffer":0,
+			"byteLength":6126,
+			"byteOffset":0
+		}
+	],
+	"buffers":[
+		{
+			"byteLength":6128,
+			"uri":"book10.bin"
+		}
+	]
+}
