@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './searchBar.css';
-import { FaSearch } from "react-icons/fa";
+import { CiSearch } from "react-icons/ci";
 
 function SearchBar(){
     const placeholderText=['books','audio books','costum cover','events']
@@ -30,7 +30,7 @@ function SearchBar(){
         <input 
         className="search" type="text" name="search" placeholder={state}/>
         <a className='searchIcon' onClick={getPlaceholderValue}>
-           
+           <CiSearch/>
         </a>
       </div>
     )

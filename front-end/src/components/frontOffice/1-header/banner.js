@@ -20,12 +20,10 @@ const DealBanner=()=>{
             }
             setCurrentDeal(deals[i]);
             setAnimationClass(""); // Reset the animation class
-            setTimeout(() => {
-              setAnimationClass("animate__bounceInLeft"); // Reapply the animation after a brief delay
-            }, 50);
+           
 
             i=(i+1)%deals.length;
-        },4000)
+        },500)
    }
    
    function getPlaceholderValue(){

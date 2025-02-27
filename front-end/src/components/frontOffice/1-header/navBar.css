@@ -1,7 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Lilita+One&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ /* font-family: "Lilita One", serif; */
+
+
+
+
 .nav{
   display: flex;
   flex-direction: column;
+  
 }
 
 
@@ -25,64 +33,56 @@
   
     display: flex;
     flex-direction: row;
-   
-   
+    background-color: transparent;
     height:60px;
     width:100%;
 }
 .logo{
-  background-color: #6b1a0b;
-  width:10%;
-  margin-right: 30px;
+  color: black;
+
+  font-size:24px;
+  margin-right: 60px;
   margin-left: 20px;
+  font-family: "Lilita One", serif;
+  letter-spacing: 1px;
+  margin-top:10px;
+  /* background-color: aqua; */
+
+  padding-top:13px;
+
  
  
 }
 
-.logo-image{
-  width:210px;
-
-}
-.searchBar{
-  margin-left:300px ;
-  margin-top: 7px;
-
-}
-.heart {
-  display: inline-block;
-  /* background-color: #6b1a0b ; */
- margin-left: 25px;
-}
-
-.likes {
-  font-size: 29px; 
-  margin-top: 15px;
-  opacity: 0.8;
- 
-}
-.shopping{
-  display: inline-block;
-  /* background-color: #6b1a0b ; */
- margin-left: 30px;
-}
-.shopping-icon{
+/* ///////////////////////////////////// options parameters//////////////////////////////////////////////////////// */
+.heart-icon{
   font-size: 30px; 
   margin-top: 15px;
   opacity: 0.8;
- 
-}
-.account{
-  display: inline-block;
-  /* background-color: #6b1a0b ; */
- margin-left: 10px;
-}
-.account-icon{
-  font-size: 30px; 
-  margin-top: 15px;
-  opacity: 0.8;
+  margin:20px 10px 20px 10px; 
  
 }
 
+.shopping-cart{
+  font-size: 30px; 
+  margin-top: 15px;
+  opacity: 0.8;
+  margin:20px 10px 20px 10px; 
+}
+
+.user{
+  font-size: 30px; 
+  margin-top: 15px;
+  opacity: 0.8;
+  margin:20px 10px 20px 10px; 
+
+}
+.options{
+  display: flex;
+  flex-direction: row;
+  position:absolute;
+  right: 8%;
+}
 
 
 
@@ -98,9 +98,9 @@
 .nav-bar {
 
   list-style-type: none;
-  padding: 10px 20px;
+  padding: 40px 20px;
   display: flex;
-  gap: 50px;
+  gap: 25px;
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -118,12 +118,40 @@
   padding: 10px 15px;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
+  /* background-color: #6b1a0b; */
+  /* extra stuff  */
+  border: none;
+  background: none;
+ 
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+.nav-bar li a:focus,
+.nav-bar li a:hover {
+  color: #1c1129;
 }
 
-.nav-bar li a:hover {
-  color: #ffd1d1; 
-  transform: scale(1.05)
+.nav-bar li a:focus:after,
+.nav-bar li a:hover:after {
+  width: 100%;
+  left: 0%;
 }
+
+.nav-bar li a:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #000000;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
 
 
 .dropdown {
@@ -158,6 +186,7 @@
   font-size: 15px;
   display: block;
   transition: background-color 0.3s ease, color 0.3s ease;
+
 }
 
 .dropdown li a:hover {
@@ -167,7 +196,7 @@
 
 /* Spacing Between Items */
 .nav-bar > .nav-item {
-  margin-right: 20px;
+  margin-right: 0px;
   z-index: 10;
 }
 
@@ -178,3 +207,23 @@
   pointer-events: auto;
   z-index: 10;
 }
+
+
+.loginForm{
+  z-index:966999;
+  display: flex;
+   position:absolute;
+   top :60%;
+   left:40%;
+   width:500px;
+   height: 500px;
+
+}
+/* .hey{
+  display: flex;
+  position:absolute;
+  top :50%;
+  background-color: #6b1a0b;
+  width:500px;
+  height: 500px;
+} */

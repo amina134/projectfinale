@@ -36,10 +36,10 @@ const BookModel = ({path}) => {
       
       <primitive
         ref={bookRef}
-        object={scene}
+       object={scene}
         scale={[3, 3, 3]}
           rotation={rotation} // Apply the rotation based on mouse position
-        position={[0, 0, 0]} // Centered
+        position={[-1, 3, -1]} // Centered
         onClick={handleClick} // Trigger rotation toggle on click
       />
     </Canvas>

@@ -13,6 +13,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setBook } from './redux/bookSlice';
 import DisplayBookInformation from './components/frontOffice/2-hero/bookInformation';
 import FilterBooks from './components/frontOffice/3-main/booksFilterPage';
+import Login from './components/frontOffice/6-sign/login';
 
 function App() {
   const books=useSelector(state=>state.bookElement)
@@ -37,9 +38,10 @@ function App() {
 
    <Routes>
 
-    <Route path='/' element={<> <NavBar/> <HomePage/></>}/>
+    <Route path='/' element={<>  <HomePage/></>}/>
     <Route path='/filterBooks' element={<FilterBooks/>}/>
     <Route path='/bookInformation/:id' element={<DisplayBookInformation/>}/>
+    <Route path='/login' element={<FilterBooks/>}/>
 
    
    </Routes>

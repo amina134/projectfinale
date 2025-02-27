@@ -1,0 +1,29 @@
+.container-login{
+    background-color: rgb(200, 243, 243);
+    width:300px;
+    position:absolute;
+    top:10%;
+    z-index: 5000;
+
+}
+.header-login{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    gap:9px;
+    width:100%;
+    margin-top:30px;
+}
+.inputs{
+    margin-top:55px;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}
+.input{
+    display:flex;
+    align-items: center;
+    margin:auto;
+    width:480px;
+    height:80px;
+}

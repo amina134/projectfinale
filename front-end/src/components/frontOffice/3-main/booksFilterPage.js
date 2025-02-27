@@ -13,18 +13,17 @@ function FilterBooks(){
      const[arr,setArr]=useState(books);
      const [values,setValues]=useState([MIN,MAX])
      const [selectedCategory,setSelectedCategory]=useState([])
-     const [selectedMood,setSelectedMood]=useState(null)
-     const [selectedLanguage,setSelectedLanguage]=useState(null)
+     const [selectedMood,setSelectedMood]=useState([])
+     const [selectedLanguage,setSelectedLanguage]=useState([])
+     const [bookToDelete,setBookToDelete]=useState(null)
      const[buttons,setButtons]=useState([])
      // function to create the array of buttons
      const createChosenButtons = (value) => {
-      let test=false
+      let test=buttons.includes(value)
       if(!test) {
         setButtons([...buttons, `${value}` ]);
       }
-      else if (buttons.includes(value)){
-        test=true
-      }
+    
     
     };
   
@@ -42,6 +41,7 @@ function FilterBooks(){
      useEffect(() => {
       
         filterBooks();
+       
 
       
     }, [selectedCategory, selectedMood, selectedLanguage, values,filteredBooks]);
@@ -60,12 +60,11 @@ const filterBooks=()=>{
    console.log('filtered books genre:',filtered);
   }
    // filter by mood
-  if (selectedMood){
+  if (selectedMood.length >0){
      filtered=filtered.filter((book)=>selectedMood.includes(book.mood))
-   
   }
      // filter by language
-  if (selectedLanguage){
+  if (selectedLanguage.length>0){
   filtered=filtered.filter((book)=>selectedLanguage.includes(book.language))
 
   }
@@ -99,14 +98,30 @@ const filterBooks=()=>{
         }  
 /*/*///*/*/*/*/*/*/*// button mood  filter //*//*/*/*/*/*/*/*//*/*/**/ */
         const handleMoodClick=(value)=>  {
-           setSelectedMood(value===selectedMood ? null:value)
+           setSelectedMood((prev)=>
+          prev.includes(value)? prev.filter((cat)=>cat !==value) :[...prev,value])
          }  
 /*/*///*/*/*/*/*/*/*// button Language filter //*//*/*/*/*/*/*/*//*/*/**/ */
         const handleLanguageClick=(value)=>{
-          setSelectedLanguage(value===selectedLanguage ? null:value)
+          setSelectedLanguage((prev)=>
+          prev.includes(value)? prev.filter((cat)=>cat !==value) :[...prev,value])
         }
 
-         ///////////////
+      
+
+  
+
+         /////////////// remove button from an array 
+
+         const removeButton = (value) => {
+          console.log('filtered books before removing',filteredBooks)
+          console.log('the value to remove is ',value)
+          setFilteredBooks((prevBooks) => prevBooks.filter((cat) => cat !== value));
+          console.log('filtered books after removing',filteredBooks)
+          setButtons((prevButtons) => prevButtons.filter((cat) => cat !== value));
+          
+
+        };
        
     
 
@@ -183,35 +198,35 @@ const filterBooks=()=>{
 
             <div className='but-container'>
             
-            <button  className={`button-filter ${selectedMood === 'happy' ? "active" : null}`} onClick={() => {handleMoodClick('happy');createChosenButtons('happy')}} 
+            <button  className={`button-filter ${selectedMood.includes('happy') ? "active" : null}`} onClick={() => {handleMoodClick('happy');createChosenButtons('happy');}} 
             style={{
-                  backgroundColor: selectedMood === 'happy' ? "black" :' #fef9f2', 
-                  color: selectedMood=== 'happy'? "white" : "black"
+                  backgroundColor: selectedMood.includes('happy')  ? "black" :' #fef9f2', 
+                  color: selectedMood.includes('happy') ? "white" : "black"
                 }}>happy </button>
-            <button className={`button-filter ${selectedMood === 'romantic' ? "active" : null}`} onClick={() => {handleMoodClick('romantic');createChosenButtons('romantic')}}
+            <button className={`button-filter ${selectedMood.includes('romantic') ? "active" : null}`} onClick={() => {handleMoodClick('romantic');createChosenButtons('romantic');}}
                style={{
-                backgroundColor: selectedMood === 'romantic' ? "black" :' #fef9f2', 
-                color: selectedMood=== 'romantic'? "white" : "black"
+                backgroundColor: selectedMood.includes('romantic' )? "black" :' #fef9f2', 
+                color: selectedMood.includes('romantic')? "white" : "black"
               }}>romantic</button>
-            <button className={`button-filter ${selectedMood === 'sad' ? "active" : null}`} onClick={() => {handleMoodClick('sad');createChosenButtons('sad')}}
+            <button className={`button-filter ${selectedMood.includes('sad') ? "active" : null}`} onClick={() => {handleMoodClick('sad');createChosenButtons('sad');}}
                style={{
-                backgroundColor: selectedMood === 'sad' ? "black" :' #fef9f2', 
-                color: selectedMood=== 'sad'? "white" : "black"
+                backgroundColor: selectedMood.includes('sad') ? "black" :' #fef9f2', 
+                color: selectedMood.includes('sad')? "white" : "black"
               }}>sad</button>
-            <button className={`button-filter ${selectedMood === 'adventurous' ? "active" : null}`} onClick={() => {handleMoodClick('adventurous');createChosenButtons('adventurous')}}
+            <button className={`button-filter ${  selectedMood.includes('adventurous') ? "active" : null}`} onClick={() => {handleMoodClick('adventurous');createChosenButtons('adventurous');}}
                style={{
-                backgroundColor: selectedMood === 'adventurous' ? "black" :' #fef9f2', 
-                color: selectedMood=== 'adventurous'? "white" : "black"
+                backgroundColor: selectedMood.includes ('adventurous' )? "black" :' #fef9f2', 
+                color: selectedMood.includes('adventurous')? "white" : "black"
               }}>adventurous </button>
-            <button  className={`button-filter ${selectedMood === 'inspirational' ? "active" : null}`} onClick={() =>{ handleMoodClick('inspirational');createChosenButtons('inspirational')}}
+            <button  className={`button-filter ${  selectedMood.includes('inspirational') ? "active" : null}`} onClick={() =>{ handleMoodClick('inspirational');createChosenButtons('inspirational');}}
                style={{
-                backgroundColor: selectedMood === 'inspirational' ? "black" :' #fef9f2', 
-                color: selectedMood=== 'inspirational'? "white" : "black"
+                backgroundColor: selectedMood.includes('inspirational') ? "black" :' #fef9f2', 
+                color: selectedMood.includes('inspirational')? "white" : "black"
               }}> inspirational</button>
-            <button  className={`button-filter ${selectedMood === 'uplifting' ? "active" : null}`} onClick={() =>{ handleMoodClick('uplifting');createChosenButtons('uplifting')}}
+            <button  className={`button-filter ${selectedMood.includes('uplifting' )? "active" : null}`} onClick={() =>{ handleMoodClick('uplifting');createChosenButtons('uplifting');}}
                style={{
-                backgroundColor: selectedMood === 'uplifting' ? "black" :' #fef9f2', 
-                color: selectedMood=== 'uplifting'? "white" : "black"
+                backgroundColor: selectedMood.includes('uplifting') ? "black" :' #fef9f2', 
+                color: selectedMood.includes('uplifting')? "white" : "black"
               }}>uplifting</button>
          
 
@@ -223,57 +238,65 @@ const filterBooks=()=>{
           <div  className='but-container'>
             
           <button
-               className={`button-filter ${selectedLanguage === 'English' ? "active" : ""}`}
+               className={`button-filter ${selectedLanguage.includes('english') ? "active" : null}`}
                onClick={() => {
-               handleLanguageClick('English'); 
-               createChosenButtons('English');
+               handleLanguageClick('english'); 
+               createChosenButtons('english');
+       
                }}
                 style={{
-                  backgroundColor: selectedLanguage === 'English' ? "black" :' #fef9f2', 
-                  color: selectedLanguage === 'English'? "white" : "black"
+                  backgroundColor: selectedLanguage.includes('english') ? "black" :' #fef9f2', 
+                  color: selectedLanguage.includes('english')? "white" : "black"
                 }}
           >
             English
           </button>
 
 
-          <button  className={`button-filter ${selectedLanguage === 'Japanese' ? "active" : null}`}     onClick={() => {
+          <button  className={`button-filter ${selectedLanguage.includes ('Japanese') ? "active" : null}`}     onClick={() => {
                handleLanguageClick('Japanese'); 
-               createChosenButtons('Japanese')
+               
+            
+               if(selectedLanguage.includes ('Japanese')){
+                createChosenButtons('Japanese');
+               }
        
                }}
                style={{
-                backgroundColor: selectedLanguage === 'japanese' ? "black" : "#fef9f2",
-                color: selectedLanguage === 'japanese' ? "white" : "black",
+                backgroundColor: selectedLanguage.includes ('Japanese') ? "black" : "#fef9f2",
+                color: selectedLanguage.includes ('Japanese') ? "white" : "black",
               }}>Japanese
             </button>
 
 
-            <button className={`button-filter ${selectedLanguage === 'Arabic' ? "active" : null}`}     onClick={() => {
+            <button className={`button-filter ${selectedLanguage.includes( 'Arabic') ? "active" : null}`}     onClick={() => {
                handleLanguageClick('Arabic'); 
-               createChosenButtons('Arabic')
+               createChosenButtons('Arabic');
+             
                }}
                 style={{
-                  backgroundColor: selectedLanguage === 'Arabic' ? "black" :' #fef9f2', 
-                  color:selectedLanguage === 'Arabic' ? "white" : "black"
+                  backgroundColor: selectedLanguage.includes('Arabic') ? "black" :' #fef9f2', 
+                  color:selectedLanguage.includes('Arabic') ? "white" : "black"
                 }}>Arabic</button>
 
-            <button  className={`button-filter ${selectedLanguage === 'Spanish' ? "active" : null}`}     onClick={() => {
+            <button  className={`button-filter ${selectedLanguage.includes('Spanish') ? "active" : null}`}     onClick={() => {
                handleLanguageClick('Spanish'); 
-               createChosenButtons('Spanish')
+               createChosenButtons('Spanish');
+             
                }}
                 style={{
-                  backgroundColor: selectedLanguage === 'Spanish' ?"black" :' #fef9f2', 
-                  color: selectedLanguage === 'Spanish' ? "white" : "black"
+                  backgroundColor: selectedLanguage.includes('Spanish') ?"black" :' #fef9f2', 
+                  color: selectedLanguage.includes ('Spanish') ? "white" : "black"
                 }}>Spanish </button>
-            <button  className={`button-filter ${selectedLanguage === 'french' ? "active" : null}`}     onClick={() => {
+            <button  className={`button-filter ${selectedLanguage.includes('french') ? "active" : null}`}     onClick={() => {
                handleLanguageClick('french'); 
                createChosenButtons('french');
+              
         
                }}
                 style={{
-                  backgroundColor: selectedLanguage === 'french' ? "black" :' #fef9f2', 
-                  color:selectedLanguage === 'french' ? "white" : "black"
+                  backgroundColor: selectedLanguage.includes('french') ? "black" :' #fef9f2', 
+                  color:selectedLanguage.includes('french') ? "white" : "black"
                 }}>French</button>
           </div>
 
@@ -325,7 +348,7 @@ const filterBooks=()=>{
                <div className='chosen'>
                  {/* Render the dynamically created buttons */}
                  {buttons.map((el1, index) => (
-               <button key={index}>{el1}</button>
+               <button key={index} className='chosen-button'>{el1} <img className='cancel-image' src='./icons/cancel.png' onClick={()=>{setBookToDelete(el1);removeButton(el1)}}/></button>
                  ))}
                </div>
                <div className="item" >

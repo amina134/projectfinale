@@ -1,40 +1,72 @@
 import BookModel from "../3d components/three"
 import './page1.css'
+import { useSelector, useDispatch } from 'react-redux';
 import 'animate.css';
-const style = {
-   
-    
-  };
-  
-function Page1(){
+import { useEffect, useState } from "react";
+import { MdKeyboardArrowUp } from "react-icons/md";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 
 
+  const Page1=({changePage})=>{
+    const [showBook, setShowBook] = useState(null);
+
+  const books = useSelector(state => state.bookElement); 
+
+  console.log("Books from Redux:", books);
+
+  useEffect(() => {
+    if (books.length > 0) {  
+      const book = books.find(element => element.title === 'Hokusai Museum');
+      console.log('Found book:', book);
+      setShowBook(book);
+    }
+  }, [books]); 
     return (
-        <div className="background-container" >
-        <div className="overlay">
-          <div className="item1">
-       
-        
+        <div className="background-container1" >
          
-      <BookModel path="/book2.gltf" />
-   
+            <div className="item11">
 
+              {showBook ? (
+              <div className='flex-items'>
+                 <h3 className='price-title'>{showBook.price}</h3>
+                 <h2 className="title-of-book animate__animated animate__bounce">{showBook.title}</h2>
+                 <p className='descrption-showbook'>{showBook.description}</p>
+                 <button className="shop-now-button"><h3 className="shop-now">Shop Now</h3></button>
+                </div>
+        ) : (
+         <p></p>
+        )}
+    
+      
            </div>
-          <div className="item2">
-            <h2 class="animate__animated animate__bounce">Open a book <br/>unlock a world.</h2>
-          
-            <p>Discover our carefully selected collection of literature books, featuring timeless classics and modern masterpieces.</p>
-            <button>Shop Now</button>
+          <div className="item22">
+            
+                 <BookModel path='/book3.gltf' className='d-book'  position={[12, 0, -5]}/> 
+           
           </div>
-          <div className="item3">
-            <BookModel path='/book3.gltf'/>
-          </div>
-        </div>
+
+        
+      
+         
+        
+      
       </div>
       
       
     )
+    // return(
+    //  <div>
+    //     {showBook ? (
+    //       <div>
+    //         <h2>{showBook.title}</h2>
+    //         <p>Genre: {showBook.genre}</p>
+    //         <p>Price: ${showBook.price}</p>
+    //       </div>
+    //     ) : (
+    //       <p>Loading book details...</p> // Fallback UI while waiting for data
+    //     )}
+    //  </div>)
 
 }
 export default Page1;
