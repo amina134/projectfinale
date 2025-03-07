@@ -7,6 +7,9 @@ import { CiUser } from "react-icons/ci";
 import { CiHeart } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import Login from "../6-sign/login";
+
+import { AnimatePresence, motion } from 'framer-motion';
+
 function NavBar(){
     const [showLoginForm,setShowLoginForm]=useState(false)
     return(
@@ -19,6 +22,7 @@ function NavBar(){
         <div className="logo-plus-searchbar">
         <div  className="logo">
            <h3>Booksy</h3>
+
         </div>
        
       
@@ -61,14 +65,24 @@ function NavBar(){
                Login / Sign up
             ===========================  */}
          
-{
-                showLoginForm && (
-                    <div className="loginForm">
-                      
-                       <Login  key={showLoginForm}  setShowLoginForm={setShowLoginForm} />
-                    
-                    </div>)
-            }
+                  {
+            showLoginForm && (
+              <div className="loginForm">
+                {/* <AnimatePresence initial={false}>
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0 }}  // Start with opacity 0 and scale 0
+                    animate={{ opacity: 1, scale: 1 }}  // Animate to opacity 1 and scale 1
+                    exit={{ opacity: 0, scale: 0 }}     // Exit animation to opacity 0 and scale 0
+                    className="box"                    // Add your custom class for styling
+                    key="box"                           // Key helps with the animation
+                  > */}
+                    <Login key={showLoginForm} setShowLoginForm={setShowLoginForm} />
+                  {/* </motion.div>
+                </AnimatePresence> */}
+              </div>
+            )
+          }
+
 
 
         </div>

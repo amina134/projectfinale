@@ -1,29 +1,22 @@
-.container-login{
-    background-color: rgb(200, 243, 243);
-    width:300px;
-    position:absolute;
-    top:10%;
-    z-index: 5000;
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lilita+One&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+  .icon-close {
+    font-family: 'icomoon' !important;
+    font-size: 1.5rem;
+    color: var(--subtitle);
+    transition: 0.3s;
+    background-color: transparent;
 }
-.header-login{
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    gap:9px;
-    width:100%;
-    margin-top:30px;
+
+.icon-close:hover {
+    font-size: 1.7rem;
+    color: crimson;
+    rotate: 180deg;
 }
-.inputs{
-    margin-top:55px;
-    display: flex;
-    flex-direction: column;
-    gap:25px;
-}
-.input{
-    display:flex;
-    align-items: center;
-    margin:auto;
-    width:480px;
-    height:80px;
-}
+
+
+
+

@@ -1,0 +1,158 @@
+
+
+
+.container-signUp{
+    /* background-color: rgb(86, 126, 169); */
+   
+    background-color: white;
+    width:700px;
+    height: 400px;
+    position:absolute;
+    top:20%;
+    left: 27%;
+    z-index: 9999;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    animation: mymove 0.2s 1;
+
+}
+
+.part1-signUp {
+   
+}
+/* /// part of the sign up inputs etc...... */
+.signUp-container{
+    flex:1;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+   padding:50px 30px 5% 30px;
+    /* background-color: aqua; */
+
+    /* new */
+
+
+  
+}
+.sign-up-new{
+   
+
+
+}
+
+
+.header-signUp{
+    margin-bottom: 6px;
+}
+
+.text-signUp{
+    text-align: center;
+    font-size: 34px;
+    font-family: "passion one"; 
+    letter-spacing: 2px;
+}
+
+/* ///// inputs */
+
+
+
+
+/* ////////// */
+.signUp-button{
+   
+        width:200px;
+        height:40px;
+      
+        font-family: "IBM Plex Sans"; 
+      
+      
+       margin-left: 20px;
+        font-size: 17px;
+      
+        
+      
+        border:1px solid black;
+        border-radius: 30px;
+      
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      
+        background-color:#fafafa;
+        color: rgb(0, 0, 0);
+        
+        box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+          overflow: hidden;
+        cursor: pointer;
+        opacity: 1;
+       
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      
+}
+.signUp-button-content{
+    .signIn-button-content{
+        position: relative;
+        z-index: 1;
+    
+       }
+}
+
+
+
+/* /////// decorative part sign up  */
+
+.part1-signIn-decorative-part-signUp{
+    display: flex;
+    flex-direction: column;
+    padding:50px 30px 5% 30px;
+    background-color: #000000;
+}
+
+.header-decorative-part1-signUp{
+    margin-bottom: 6px;
+}
+.title-decorative-part1-signUp{
+    color: white;
+    text-align: center;
+    font-size: 34px;
+    font-family: "passion one"; 
+    letter-spacing: 2px;
+}
+.para-decorative-part1-signUp{
+    color: white;
+    margin:30px;
+    text-align: center;
+}
+
+.signIn-button-part1-signUp{
+    width:200px;
+    height:40px;
+  
+    font-family: "IBM Plex Sans"; 
+  
+  
+   margin-left: 20px;
+    font-size: 17px;
+  
+    
+  
+    border:1px solid black;
+    border-radius: 30px;
+  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    background-color:#fafafa;
+    color: rgb(0, 0, 0);
+    
+    box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+      overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+   
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.signIn-button-part1-content{
+    position: relative;
+    z-index: 1;
+
+}

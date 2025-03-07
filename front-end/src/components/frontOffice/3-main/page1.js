@@ -40,11 +40,11 @@ import { MdOutlineKeyboardArrowDown } from "react-icons/md";
     
       
            </div>
-          <div className="item22">
+          {/* <div className="item22">
             
                  <BookModel path='/book3.gltf' className='d-book'  position={[12, 0, -5]}/> 
            
-          </div>
+          </div> */}
 
         
       

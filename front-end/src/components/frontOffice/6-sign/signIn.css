@@ -1,0 +1,272 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lilita+One&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.container-login{
+    /* background-color: rgb(86, 126, 169); */
+    overflow: hidden;
+    background-color: white;
+    width:700px;
+    height: 400px;
+    position:absolute;
+    top:20%;
+    left: 27%;
+    z-index: 9999;
+    pointer-events: auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    animation: mymove 0.2s 1;
+
+}
+
+
+
+
+
+/* /// part of the sign in inputs etc...... */
+.signIn-container{
+    flex:1;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+   padding:50px 30px 5% 30px;
+
+  
+
+  
+   
+    /* background-color: aqua; */
+}
+/* new */
+.sign-in-new{
+    opacity: 0;
+
+  
+     
+  
+}
+/* for the title sign up */
+.header-login{
+    margin-bottom: 6px;
+    
+
+}
+.text-login{
+    text-align: center;
+    font-size: 34px;
+    font-family: "passion one"; 
+    letter-spacing: 2px;
+}
+/* for the inputs */
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap:16px;
+    width: 300px;
+    
+    /* background-color: brown; */
+}
+.input{
+ /* background-color: black; */
+ width: 300px;
+
+}
+.input-login{
+    width:250px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+}
+/* forgot pass */
+.forgot-password{
+    margin:10px 20px 20px 20px;
+}
+
+
+.signIn-button{
+    width:200px;
+    height:40px;
+  
+    font-family: "IBM Plex Sans"; 
+  
+  
+   margin-left: 20px;
+    font-size: 17px;
+  
+    
+  
+    border:1px solid black;
+    border-radius: 30px;
+  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    background-color:#fafafa;
+    color: rgb(0, 0, 0);
+    
+    box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+      overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+   
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+   }
+   .signIn-button:hover{
+  background-color: #fef9f2;
+   } 
+   .signIn-button:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .signIn-button {
+    position: relative;
+  
+  }
+   .signIn-button-content{
+    position: relative;
+    z-index: 1;
+
+   }
+  .signIn-button-content:hover{
+    color:white;
+  }
+  
+  .signIn-button:hover{
+    color:rgb(254, 254, 254);
+  }
+ 
+  
+  
+  .signIn-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      #0f0f0f 10.8%,
+      #000000  94.3%
+    );
+    color: white;
+    transition: all 0.475s;
+  }
+  
+
+
+
+
+
+
+
+
+/* //////// decorative part  */
+.decorative-part-signIn{
+    flex:1;
+  
+    
+}
+.part1-signIn-decorative-part-signIn{
+    display: flex;
+    flex-direction: column;
+    padding:50px 30px 5% 30px;
+    background-color: #000000;
+}
+
+.header-decorative-part1{
+    margin-bottom: 6px;
+}
+
+ .title-decorative-part1{
+    color: white;
+    text-align: center;
+    font-size: 34px;
+    font-family: "passion one"; 
+    letter-spacing: 2px;
+ }
+  
+
+ .para-decorative-part1{
+    color: white;
+    margin:30px;
+    text-align: center;
+ }
+/* for the sign up button */
+.signUp-button-part1{
+    width:200px;
+    height:40px;
+  
+    font-family: "IBM Plex Sans"; 
+  
+  
+   margin-left: 20px;
+    font-size: 17px;
+  
+    
+  
+    border:1px solid black;
+    border-radius: 30px;
+  
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+    background-color:#fafafa;
+    color: rgb(0, 0, 0);
+    
+    box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+      overflow: hidden;
+    cursor: pointer;
+    opacity: 1;
+   
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+   }
+   .signUp-button-part1:hover{
+  background-color: #fef9f2;
+   } 
+   .signUp-button-part1:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .signUp-button-part1{
+    position: relative;
+  
+  }
+   .signUp-button-part1-content{
+    position: relative;
+    z-index: 1;
+
+   }
+  .signUp-button-part1:hover{
+    color:white;
+  }
+  
+  .signUp-button-part1-content:hover{
+    color:rgb(254, 254, 254);
+  }
+ 
+  
+  
+  .signUp-button-part1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      #0f0f0f 10.8%,
+      #000000  94.3%
+    );
+    color: white;
+    transition: all 0.475s;
+  }
+

@@ -70,7 +70,7 @@ background-color: #fef9f2;
   z-index: 1;
 }
 .button-content:hover{
-  color:white;
+  color:rgb(255, 255, 255);
 }
 .but2:hover{
   color:white;

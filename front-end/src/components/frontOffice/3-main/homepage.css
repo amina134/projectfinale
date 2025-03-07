@@ -72,7 +72,7 @@
 .button-wrapper1{
   position: relative;
   margin-left: 20px;
-  z-index: 45; /* Ensure the button is above other elements */
+  z-index: 45; 
 }
 .button-transition1{
   background-color: transparent;

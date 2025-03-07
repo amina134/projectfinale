@@ -116,15 +116,15 @@
   /* item 2 */
   .item22{
     flex:1;
-  
+    pointer-events: none;
     position: absolute;
     left:63%;
     top:18%;
     width:25%;
     height: 80%;
-    background: linear-gradient(135deg, #dd8cbf, #9ad2da);
+    /* z-index:-1; */
   
- 
+    
 
   }
   /* the added part */

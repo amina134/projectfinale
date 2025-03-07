@@ -27,7 +27,7 @@ function SearchBar(){
     },[])
     return(
       <div className='searchBar'> 
-        <input 
+        <input  
         className="search" type="text" name="search" placeholder={state}/>
         <a className='searchIcon' onClick={getPlaceholderValue}>
            <CiSearch/>

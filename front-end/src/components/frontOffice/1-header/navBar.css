@@ -5,10 +5,25 @@
 
 
 
+ @keyframes mymove {
+  0% {
+      scale: 0;
+  }
+
+  60% {
+      scale: 1.2;
+  }
+
+  100% {
+      scale: 1;
+  }
+}
 
 .nav{
   display: flex;
   flex-direction: column;
+  z-index: 10000;
+  pointer-events: auto;
   
 }
 
@@ -212,12 +227,14 @@
 .loginForm{
   z-index:966999;
   display: flex;
-   position:absolute;
-   top :60%;
-   left:40%;
-   width:500px;
-   height: 500px;
+   position:fixed;
 
+ 
+   /* for the blur effect when oppening */
+  inset: 0;
+  background-color: rgba(39, 38, 38, 0.669);
+  backdrop-filter: blur(4px);
+ 
 }
 /* .hey{
   display: flex;
