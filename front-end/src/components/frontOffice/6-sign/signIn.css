@@ -224,6 +224,9 @@
     opacity: 1;
    
     transition: opacity 0.3s ease, visibility 0.3s ease;
+
+
+    
    }
    .signUp-button-part1:hover{
   background-color: #fef9f2;
@@ -269,4 +272,6 @@
     color: white;
     transition: all 0.475s;
   }
+
+
 

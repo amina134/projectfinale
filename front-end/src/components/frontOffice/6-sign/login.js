@@ -10,7 +10,7 @@ import SignIn from './signIn';
 import SignUp from './signUp';
 const Login=({setShowLoginForm})=>{
     
-    const [signIn,setSignIn]=useState(true)
+    const [isSignUp,setIsSignUp]=useState(true)
 
     return(
       
@@ -25,21 +25,25 @@ const Login=({setShowLoginForm})=>{
         //         {/* Your content goes here */}
                 <Paper className="total">
                         <button className='icon-close' onClick={() => setShowLoginForm(false)} > <FontAwesomeIcon icon={faXmark} /></button> 
-                  
-                    {/* start with sign in part */}
-                 
-                     { signIn ?(
-                        <div>
-                             <SignIn key={setSignIn} setSignIn={setSignIn} signIn={signIn} />
+                                
+            <div className={`container ${isSignUp ? "right-panel-active" : ""}`}>
+                    <SignUp setIsSignUp={() => setIsSignUp(true)} />
+                    <SignIn setIsSignUp={() => setIsSignUp(false)} />
+                    <div className="overlay-container">
+                        <div className="overlay">
+                        <div className="overlay-panel overlay-left">
+                            <h1 className='h1-login'>Welcome Back!</h1>
+                            <p className='p-login'>To keep connected with us please login with your personal info</p>
+                            <button className="ghost" onClick={() => setIsSignUp(false)}>Sign In</button>
                         </div>
-                     ):(
-                        <SignUp key={setSignIn} setSignIn={setSignIn} signIn={signIn} />
-                     )
-                       
-                     
-
-                     }
-           
+                        <div className="overlay-panel overlay-right">
+                            <h1 className='h1-login'>Hello, Friend!</h1>
+                            <p className='p-login'>Enter your personal details and start your journey with us</p>
+                            <button className="ghost" onClick={() => setIsSignUp(true)}>Sign Up</button>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
            
                 </Paper>
        
