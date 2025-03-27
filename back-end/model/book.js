@@ -5,10 +5,10 @@ const bookSchema =  mongoose.Schema({
     type: String,
     required: true,
   },
-  // author: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'author', 
-  // },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'user', 
+  },
   genre: {
     type: String,
     required: true,
@@ -34,7 +34,8 @@ const bookSchema =  mongoose.Schema({
   },
   mood:{
     type:String
-  }
+  },
+  purchases: { type: Number, default: 0 }, // Track popularity
 });
 
 

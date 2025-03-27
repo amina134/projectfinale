@@ -1,23 +1,52 @@
 
 
-
-import React, { useState } from 'react';
+import { useState, useEffect,startTransition  } from "react";
 import './bookCard.css'; // Import the CSS file
 import { CiHeart } from "react-icons/ci";
 import { IoMdHeart } from "react-icons/io";
 import { FaCartPlus } from "react-icons/fa";
-
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 
-
-const BookCard = ({ title, author, bookImage, description, _id, price,genre,mood }) => {
+const BookCard = ({ title, user, bookImage, description, _id, price,genre,mood }) => {
    const[isBlack,setIsBlack]=useState(false)
+
+   ////// hovering over the book
+   const [isHovered, setIsHovered] = useState(false);
+   const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
    const changeColor=()=>{
     setIsBlack(!isBlack);
    }
 
+   ///////// redux to get the users 
+    const users=useSelector(state=>state.userElement);
+    const[bookAuthor,setBookAuthor]=useState({})
+    const[usersArr,setUsersArr]=useState(users);
+    useEffect(()=>{setUsersArr(users); } ,[users]);
+
+    // get the user informations of the user id of the book
+    useEffect(()=>{
+        const findUser=async(user)=>{
+        const userBook=usersArr.find((el)=>el._id===user)
+        console.log("the author of the book is ",userBook)
+        setBookAuthor({...userBook}||{})
+        return {...userBook  ||{}}
+      }
+    
+        
+
+        findUser(user)
+         },[usersArr])
+   
+
   return (
-                
+        
     <div className='book-box'>
       <div className="heart-icon1"    onClick={changeColor}>  
      {isBlack ? <IoMdHeart color="black"/>  :<CiHeart/>} 
@@ -27,13 +56,15 @@ const BookCard = ({ title, author, bookImage, description, _id, price,genre,mood
       
     
       <Link className="link" to={`/bookInformation/${_id}`}> 
-      <div className="mobile-layout">
- 
+      <div className="mobile-layout"
+       onMouseEnter={handleMouseEnter}
+       onMouseLeave={handleMouseLeave}>
+      
      
           
 
          
-        <div className="book-cover">
+        <div className={`book-cover ${isHovered ? 'hovered' : ''}`}>
 
           <img className="book-top" src={`http://localhost:3000/${bookImage}`} alt={title} />
           
@@ -47,15 +78,15 @@ const BookCard = ({ title, author, bookImage, description, _id, price,genre,mood
         </div>
       
     
-        <div className="preface">
+        <div className={`preface ${isHovered ? 'hovered' : ''}`}>
             
           <div className="content">
             <div className="header">
-              <div className="title">{title}</div>
+              <div className="title-book-card">{title}</div>
              
             </div>
-            <div className="author">by Amina Kouni</div>
-            <div className="icon">
+            <div className="author-name-book-card">by {bookAuthor.userName}</div>
+            <div className="icon-down">
                 <i className="fas fa-chevron-down"></i>
               </div>
             

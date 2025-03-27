@@ -1,0 +1,209 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lilita+One&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.footer-layout{
+    /* background-color: rgb(156, 63, 255); */
+    width:100%;
+    height:500px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+
+}
+
+/* /////////////////////////// part 1 of  footer ////////////////// */
+
+.part1-footer{
+  height: 300px;
+
+  display: flex;
+  margin-left:140px;
+  margin-right:140px;
+  margin-top:80px;
+  margin-bottom: 0;
+  gap:50px;
+
+
+}
+.ul-footer{
+    text-decoration: none;
+}
+.ul-footer li{
+    font-family: "Outfit", sans-serif;
+    font-size:17px;
+    margin:10px;
+   
+}
+/* /////  the links */
+.ul-footer li a{
+text-decoration: none;
+transition: color 0.3s ease, transform 0.3s ease;
+border: none;
+position: relative;
+  display: inline-block;
+background: none;
+color: white;
+transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+transition-duration: 400ms;
+transition-property: color;
+}
+.ul-footer li a:focus,
+.ul-footer li a:hover {
+color: #ffffff;
+}
+
+.ul-footer li a:focus:after,
+.ul-footer li a:hover:after {
+width: 100%;
+left: 0%;
+}
+
+.ul-footer li a:after {
+content: "";
+pointer-events: none;
+bottom: -2px;
+left: 50%;
+position: absolute;
+width: 0%;
+height: 1px;
+background-color: #ffffff;
+transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+transition-duration: 400ms;
+transition-property: width, left;
+}
+
+
+
+/* ////// end of links */
+
+/* ///////// logo part +social media ////// */
+.logo-footer{
+  display: flex;
+  gap:40px;
+  flex-direction: row;
+  /* background-color: blueviolet; */
+  width:1700px;
+  margin-left: 110px;
+  margin-top: 0px;
+}
+.booksy-footer{
+  flex: 1;
+  font-family: "Outfit", sans-serif;
+  font-size:50px;
+  margin-right: 60px;
+  color: white;
+  margin-left: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top:4px; 
+}
+/* ///////////// social media/////////7 */
+.socialMedia-accounts-footer{
+  position:absolute;
+  flex: 1;
+  margin-left: 290px;
+  display: flex;
+
+  flex-direction:row;
+  
+  gap:20px;
+
+}
+.instagram-icon-footer{
+  font-size: 33px;
+   border:0.4px rgb(255, 255, 255) solid;
+   border-radius: 80px;
+   text-align: center;
+   padding:15px 15px 12px 15px ;
+   color: #ffffff;
+
+}
+.facebook-icon-footer{
+  font-size: 33px;
+  color: #ffffff;
+  border:0.4px rgb(255, 255, 255) solid;
+  border-radius: 80px;
+   text-align: center;
+   padding:15px 15px 12px 15px ;
+
+}
+.youtube-icon-footer{
+  font-size: 33px;
+  color: #ffffff;
+  border:0.4px rgb(255, 255, 255) solid;
+  border-radius: 80px;
+  text-align: center;
+  padding:15px 15px 12px 15px ;
+
+}
+
+
+
+
+/* /////////////// part 3/////////////////// */
+.part3-footer{
+    height: 290px;
+    width:100%;
+    padding:15px;
+    margin-left: 100px;
+    border-radius: 5px;
+    color: #000000;
+    font-family: "Outfit", sans-serif;
+    background-color: #ffffff;
+    /* background-color: rgb(98, 255, 93); */
+  }
+/* for the subscription */
+
+.input-group {
+  display: flex;
+
+  align-items: center;
+  width:400px;
+  margin-block:20px;
+}
+
+.input {
+  min-height: 50px;
+  max-width: 200px;
+  padding: 0 1rem;
+  color: #fff;
+  font-size: 15px;
+  border: 1px solid #E59560;
+  border-radius: 6px 0 0 6px;
+  background-color: transparent;
+}
+
+.button--submit {
+  min-height: 50px;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color:#E59560;
+ 
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+
+.button--submit:hover {
+  background-color:#000000;
+}
+
+.input:focus, .input:focus-visible {
+  border-color:#E59560;
+  outline: none;
+}
+
+.title-sub{
+  margin-bottom: 30px;
+}
+.sign-sub{
+  font-size: 20px ;
+  margin-block: 15px;
+}
+.descrip-sub{
+  margin-block: 10px;
+}

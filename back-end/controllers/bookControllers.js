@@ -19,6 +19,7 @@ const addBook = async (req, res) => {
 const getBook=async(req,res)=>{
     try {
         const book=await bookSchema.findById(req.params.id)
+       
         if (book){
             res.status(200).json({message:'book gotten succesfully',book})
         }
@@ -30,7 +31,7 @@ const getBook=async(req,res)=>{
 //this function updates a book
 const updateBook=async(req,res)=>{
     try {
-        const bookId=req.params.id
+        const bookId=req.params.id.trim()
         const updatedBook=await bookSchema.findByIdAndUpdate(bookId,req.body)
         if (updatedBook){
             res.status(200).json({msg:'book updated ',updatedBook})}
@@ -63,4 +64,12 @@ const getAllBooks=async(req,res)=>{
         res.status(404).send('An error occurred while fetching books');
      }
 }
+
+
+///// get most purchases book 
+// const getMostpurchases=async(req,res)=>{
+//     try{
+//         const popularBooks=await bookSchema.find().sort({purchases:-1}).limit(5)
+//     }
+// } 
 module.exports={addBook,getBook,updateBook,deleteBook,getAllBooks}

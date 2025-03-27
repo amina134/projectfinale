@@ -1,5 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Averia+Serif+Libre:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lilita+One&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Lilita+One&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+ /* font-family: "Lilita One", serif; */
+.homepage{
+  display: flex;
+  flex-direction: column;
+  gap:0px;
+  background-color: #000000;
+}
+ .before-footer{
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+   background-color:#fffdf9;
+}
+
+.position-for-navbar{
+  z-index: 200;
+  position: relative;
+}
 .page {
-    overflow-y: auto;
     position: absolute;
     left: 0;
     right: 0;
@@ -11,7 +33,9 @@
   .one-lay{
     /* background: linear-gradient(to right, rgb(255, 204, 204), rgb(210, 230, 245), rgb(248, 219, 244), rgb(255, 255, 204), rgb(255, 204, 255)); */
     /* background: linear-gradient(to right, rgb(191, 221, 239), rgb(241, 191, 229)); */
-
+  border-bottom-left-radius: 60px;
+ border-bottom-right-radius: 60px;
+ 
 
   }
   
@@ -89,6 +113,7 @@
   position:absolute;
   z-index:10;
   display: flex;
+
   flex-direction:column;
   top:45%;
   right:4%;
@@ -96,23 +121,294 @@
 
 }
 .instagram-icon{
-  font-size: 30px;
+  font-size: 33px;
    border:0.4px rgb(97, 96, 96) solid;
    border-radius: 80px;
-   padding:16px 15px 15px 16px;
+   text-align: center;
+   padding:15px 15px 12px 15px ;
 
 }
 .facebook-icon{
-  font-size: 30px;
+  font-size: 33px;
   border:0.4px rgb(97, 96, 96) solid;
-  border-radius: 70px;
-  padding:15px 15px 15px 18px ;
+  border-radius: 80px;
+  text-align: center;
+  padding:15px 15px 12px 15px ;
 
 }
 .youtube-icon{
-  font-size: 30px;
+  font-size: 33px;
   border:0.4px rgb(97, 96, 96) solid;
   border-radius: 80px;
-  padding:15px 15px 15px 18px ;
+  text-align: center;
+  padding:15px 15px 12px 15px ;
+
+}
+
+
+
+
+/* ////////// div of qulaitiies ************************************+ */
+
+#cursor,
+#box,
+#text {
+  cursor: pointer;
+}
+#cursor {
+  overflow: visible;
+  transform: translate3d(300px, 0, 0) scale(1);
+  transform-origin: center center;
+  transform-box: fill-box;
+  animation: cursor 5s ease infinite alternate;
+}
+@keyframes cursor {
+  0% {
+    opacity: 0;
+    transform: translate3d(300px, 0, 0) scale(1);
+  }
+  30% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  60% {
+    opacity: 1;
+    transform: translate3d(-200px, -200px, 0) scale(1);
+  }
+
+  /* clique */
+  65% {
+    opacity: 1;
+    transform: translate3d(-200px, -200px, 0) scale(0.95);
+  }
+  70% {
+    opacity: 1;
+    transform: translate3d(-200px, -200px, 0) scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(-300px, -50px, 0) scale(1);
+  }
+}
+
+#box {
+  opacity: 0;
+  animation: box 5s ease infinite alternate;
+}
+@keyframes box {
+  0%,
+  60% {
+    opacity: 0;
+  }
+  65%,
+  100% {
+    opacity: 1;
+  }
+}
+#text {
+}
+
+.qualities-title{
+  font-size: 59px;
+  text-align: center;
+  position: absolute;
+  right:10%;
+  font-family: "Outfit", sans-serif;
+  
+}
+.bookworms{
+  text-align: center;
+}
+.qualities{
+  position: relative;
+  left:0%;
+}
+
+
+/* ///// for the user icons X */
+.user-icon{
+  width:70px;
+  height: 70px;
+
+ 
+}
+.users-icon{
+ position: absolute;
+  top: 46%;
+  left:62%;
+  display: flex;
+
+  gap:-100px;
+
+}
+
+.user3{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.user2{
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
+.user1{
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.link-to-google{
+  position: absolute;
+  top: 82%;
+  left:64%;
+  font-family: "Outfit", sans-serif;
+  text-decoration: underline;
+
+}
+
+
+
+
+
+
+/* ////////// end  div of qulaitiies ************************************+ */
+
+/* //////////   div of reviews************************************+ */
+/* Customize horizontal scrollbar */
+
+
+.website-reviews{
+  display: flex;
+  gap:20px;
+  margin:20px;
+  height: 400px;
+  width: 100%;
+   
+  overflow: hidden;
+  margin-top: 50px;
+
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width:1900px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.user-info, .book-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom:0px;
+}
+.book-info{
+  height:150px;
+}
+
+.user-image  {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+.book-image{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.user-name{
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+.book-title-review{
+  font-size: 40px;
+  font-family: "Passion One";
+  color: #000000;
+}
+
+.review-content {
+  text-align: center;
+
+}  
+.rating1{
+  margin-bottom:12px;
+}
+
+/* //// rating */
+.rating{
+  display: inline-block;
+}
+.star-solid {
+  fill: rgb(217, 217, 217); /* Default color for the star */
+  transition: fill 0.3s ease;
+
+}
+
+.star-solid.filled {
+  fill:#e58e09; /* Color for filled stars */
+}
+.review-text{
+  font-family: "Outfit", sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .review {
+    width: 90%;
+  }
+}
+
+/* ////////// end  div of reviews ************************************+ */
+
+/* /////////////////// scrolling partenships */
+.scroller {
+  margin-block: 100px;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.scroller-inner {
+  display: flex;
+  gap:60px;
+  white-space: nowrap;
+  animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.tag-list {
+  display: flex;
+  gap:130px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-list li {
+  display: inline-block;
+  margin-right: 30px; 
+}
+.logo-partnership{
+  width:150px;
 
 }

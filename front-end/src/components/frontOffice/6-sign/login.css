@@ -79,7 +79,7 @@ input {
   position: absolute;
   top:-22%;
 	
-
+ z-index: 3;
 }
 
 .container.right-panel-active .sign-in-container {

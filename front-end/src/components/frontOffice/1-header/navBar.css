@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Lilita+One&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
  /* font-family: "Lilita One", serif; */
@@ -20,6 +21,7 @@
 }
 
 .nav{
+  background-color: none;
   display: flex;
   flex-direction: column;
   z-index: 10000;
@@ -54,13 +56,13 @@
 }
 .logo{
   color: black;
-
+  font-family: "Outfit", sans-serif;
   font-size:24px;
   margin-right: 60px;
-  margin-left: 20px;
-  font-family: "Lilita One", serif;
+  margin-left: 40px;
+  font-weight: 900;
   letter-spacing: 1px;
-  margin-top:10px;
+  margin-top:4px;
   /* background-color: aqua; */
 
   padding-top:13px;
@@ -71,6 +73,7 @@
 
 /* ///////////////////////////////////// options parameters//////////////////////////////////////////////////////// */
 .heart-icon{
+  cursor: pointer;
   font-size: 30px; 
   margin-top: 15px;
   opacity: 0.8;
@@ -78,7 +81,10 @@
  
 }
 
+
+
 .shopping-cart{
+  cursor: pointer;
   font-size: 30px; 
   margin-top: 15px;
   opacity: 0.8;
@@ -86,6 +92,7 @@
 }
 
 .user{
+  cursor: pointer;
   font-size: 30px; 
   margin-top: 15px;
   opacity: 0.8;
@@ -123,7 +130,7 @@
 
 /* Nav Item Styling */
 .nav-item {
-  position: relative; /* Needed for dropdown positioning */
+  position: relative; 
 }
 
 .nav-bar li a {
@@ -133,8 +140,7 @@
   padding: 10px 15px;
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
-  /* background-color: #6b1a0b; */
-  /* extra stuff  */
+ 
   border: none;
   background: none;
  
@@ -144,7 +150,7 @@
 }
 .nav-bar li a:focus,
 .nav-bar li a:hover {
-  color: #1c1129;
+  color: #000000;
 }
 
 .nav-bar li a:focus:after,
@@ -167,7 +173,7 @@
   transition-property: width, left;
 }
 
-
+/* //////////////////////////// */
 
 .dropdown {
   list-style: none;
@@ -236,11 +242,3 @@
   backdrop-filter: blur(4px);
  
 }
-/* .hey{
-  display: flex;
-  position:absolute;
-  top :50%;
-  background-color: #6b1a0b;
-  width:500px;
-  height: 500px;
-} */

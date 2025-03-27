@@ -37,7 +37,15 @@
   }
 }
 body{
-  background-color:#fef9f2;
+ 
 
+  background-color:#ffffff;
+ /* background-color: black; */
  /* background-color:#FEF9F2; */
+}
+html, body {
+  margin: 0;
+  padding: 0;
+ 
+  overflow-x: hidden; /* Prevent horizontal scrolling if content overflows */
 }

@@ -89,7 +89,12 @@ const signIn = async (req, res) => {
 //////// signUp start /////////
 const signUp = async (req, res) => {
     try {
-        const { firstName, lastName, role, age, phone, email, password } = req.body;
+        const { userName, email, password} = req.body;
+
+        if (!userName) {
+          return res.status(400).json({ error: "Username is required" });
+        }
+       
         const found = await userSchema.findOne({ email });
         if (found) { return res.json({ msg: 'Already registered' }) };
 

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 * {
     margin: 0;
@@ -47,7 +48,7 @@
   z-index: 10;
   /* border:1px solid black; */
   z-index: 2;
-  background-color:#fef9f2;
+  background-color:#ffffff;
   color: rgb(0, 0, 0);
   
   box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
@@ -59,11 +60,12 @@
   transition: opacity 0.3s ease, visibility 0.3s ease;
  }
   .but2:hover{
-background-color: #fef9f2;
+background-color: #000000;
+color: white;
  } 
- .but2:hover::before {
+ /* .but2:hover::before {
   transform: scaleX(1);
-}
+} */
 
 .button-content {
   position: relative;
@@ -76,7 +78,7 @@ background-color: #fef9f2;
   color:white;
 }
 
-.but2::before {
+/* .but2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -93,7 +95,7 @@ background-color: #fef9f2;
   );
  
   transition: all 0.475s;
-}
+} */
 
  .card-icon{
   color:black;
@@ -122,8 +124,8 @@ font-size: 21px;
    top:0%;
     width: var(--mobile-width);
     height: var(--mobile-height);
-    border-radius: var(--mobile-radius);
-    background-color: #ebd7d7;
+    border-radius:3px;
+    background-color:#DAEAF1;
     box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
     overflow: hidden;
     perspective: 500px;
@@ -139,12 +141,13 @@ font-size: 21px;
     left: -67%;
     text-decoration: none;
     bottom:30%;
-     background-color: #fef9f2; 
+     background-color: #ffffff; 
     border-top-left-radius: var(--mobile-radius);
     border-top-right-radius: var(--mobile-radius);
     transform-style: preserve-3d;
     transform-origin: 50% 40%;
     transition: var(--transition);
+    
   }
   
   .book-top {
@@ -155,6 +158,8 @@ font-size: 21px;
     top: 110px;
     left: 165px;
     transform: translateZ(56.5px);
+
+
   }
   
   .book-side {
@@ -165,18 +170,17 @@ font-size: 21px;
     transform: translateZ(47px) rotateX(104deg);
   }
   
-  .book-cover:hover {
+  .book-cover.hovered {
     transform: rotateX(75deg) translateZ(3px) scale(0.75);
   }
   
-  .book-cover:hover + .preface {
+  .book-cover.hovered + .preface {
     transform: translateY(-400px);
   }
   
-  .book-cover:hover + .preface .icon {
+  .book-cover.hovered + .preface .icon {
     transform: rotateX(180deg);
   }
-  
   /* Preface Section */
   .preface {
     position: relative;
@@ -187,9 +191,11 @@ font-size: 21px;
     transition: var(--transition);
 
   }
-  .icon{
+  .icon-down{
     /* background-color: #712; */
-  align-self: end;
+    align-self: end;
+    transform-origin: top;
+    transition: var(--transition);
   }
   
   .content {
@@ -205,26 +211,35 @@ font-size: 21px;
     
   }
   
-  .title {
-    font-family: 'Quicksand', sans-serif;
+  .title-book-card {
+    font-family: "Outfit", sans-serif;  
     font-size:21px;
     margin:5px;
     color:black;
     word-wrap: break-word;
+    text-overflow: ellipsis;
     /* position: absolute;
     top:5%;
     left:10%; */
     text-decoration: none;
   }
   
-  .author {
-    font-family: 'Open Sans', sans-serif;
-    font-style: italic;
-    margin-left:5px;
+  .author-name-book-card{
+    font-family: "Outfit", sans-serif;
+    color: #000000;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-left:2px;
     /* position: absolute;
     top:20%;
     left:10%; */
-    margin-bottom: 20px;
+    /* text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden; */
+    white-space: nowrap;
+    overflow-x: auto;
+    display: block;
+    margin-bottom: 60px!important;
   }
   
   .body {
@@ -244,6 +259,7 @@ font-size: 21px;
     font-size: 20px;
     position: absolute;
     top:60%;
+    margin-left: 10px;
     color: black;
   }
   .genre{

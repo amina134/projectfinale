@@ -1,199 +1,417 @@
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Outfit:wght@100..900&family=Passion+One:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+.bookInformation-page{
+    display: flex;
+    gap: 13px!important;
+    flex-direction: column;
+
+  
+}
+
+
 .book-img{
 width:90%;
 
 }
-.container-information{
+.container-information-informationCard{
     /* background-color: rgb(204, 169, 236); */
-    position: absolute;
-    top:30%;
-    padding-left:19%;
+    width:70%;
+    height: 470px;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    margin-left:250px;
+    margin-top: 40px;
+    gap:30px;
+  margin-bottom: 1px!important;
    
 
 }
+/* ////// part 1 img////// */
 .part1{
-    flex:1;
+  /* background-color: black; */
+  max-height: 440px;
+  margin-bottom: 10px;
 }
+.book-img{
+    height:400px;
+    width:300px;
+    border-radius: 10px;
+
+}
+
+
+/* //////// part 2/////// */
 .part2{
-    flex:2;
+    display: flex;
+    margin-top:40px;
+    /* background-color: aqua; */
+    max-height: 440px;
+    margin-bottom: 10px;
+   
 }
 .book-title{
-    font-family: "Passion One";
-   font-size: 45px;
-   /* background-color: blue; */
+    font-family: "Outfit", sans-serif;  
+    font-size:51px;
+    margin:5px;
+    color:black;
 }
-.author-name{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-weight: normal;
-   font-size: 25px;
-   position: relative;
-   top:-3%;
+
+.author-name-bookinfo{
+    font-family: "Outfit", sans-serif;  
+    font-size:31px;
+    margin:5px; 
+    text-decoration: underline;
+    color: black;
 }
 .title-format{
-     font-family: "IBM Plex Sans";
-    font-weight: bold;
-   font-size: 13px;
-   position: absolute;
-   top:12%;
+    font-family: "Outfit", sans-serif;  
+    font-size:18px;
+    margin:30px 5px 5px 5px; 
+    font-weight: 400;
+    display: inline;
 
 }
-/* css for hardcover book */
-.hardcover{
-    width:22%;
- height:10%;
- padding:4px;
-    border:1px solid rgb(84, 83, 83);
-    border-radius: 8px;
+.hardcover-paperback{
+    display: flex;
+    flex-direction: row;
+    margin-top: 0px;
+    gap:12px;
+
 }
-.hardcover:hover{
-    border-color: #FF5722; 
-  
-    transform: scale(1.05);
+.hardcover,.paperback{
+    width:200px;
+    height: 80px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 2px;
 }
-.hardcover-text{
-    font-family: "IBM Plex Sans";
-    font-weight: normal;
-    font-size: 17px;
-    margin-left: 20px;
-    /* position: relative;
-    top:60%; */
+.hardcover-text,.paperback-text{
+    font-family: "Outfit", sans-serif;  
+    font-size:16px;
+}
+.paperback-price,.hardcover-price{
+    font-family: "Outfit", sans-serif;  
+    font-size:22px;
+    text-decoration: underline;
 }
 .language{
-    color: rgb(103, 103, 103);
-    font-weight: normal;
-    margin-left: 20px;
-      position: relative;
-    top:-14%;
-}
-.hardcover-price{
-   
-    font-family: "IBM Plex Sans";
-    font-weight: bold;
-   font-size: 25x;
-    margin-left: 20px;
-      position: relative;
-    top:-35%;
-}
-/* ///////////end of css of hardcover////////////////// */
-
-/* ///// css for paperback book///////////////// */
-.paperback{
-    width:13%;
- height:10%;
- padding:4px;
-    border:1px solid rgb(84, 83, 83);
-    border-radius: 8px;
-    position: absolute;
-    left:60%;
-    top:16.1%;
-}
-.paperback:hover{
-    border-color: #FF5722; 
-  
-    transform: scale(1.05);
-}
-.paperback-text{
-    font-family: "IBM Plex Sans";
-    font-weight: normal;
-    font-size: 17px;
-    margin-left: 20px;
-    /* position: relative;
-    top:60%; */
-}
-
-.paperback-price{
-   
-    font-family: "IBM Plex Sans";
-    font-weight: bold;
-   font-size: 25x;
-    margin-left: 20px;
-      position: relative;
-    top:-35%;
-}
-/* ///////////end of css of paperback////////////////// */
-
-.but1{
-    width:160px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    font-size: 14px;
-    position:absolute;
-    top:45%;
-    left:51.5%;
-    background-color:#000000;
-    color: white;
-    z-index: 2;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    opacity: 1;
-    /* visibility: hidden; */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-
-.description{
-   position: relative; 
-   top:15%;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    color: #0d0c0c;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 16px;
-    border-bottom: 2px solid #FF5722;
     display: inline-block;
-    padding-bottom: 4px;
-}
-
-.book-description{
-    position:relative;
-    top:10%;
-    right:8%;
-    padding:20px;
-    font-size: 20px;
-    line-height: 1.6;
- 
-    margin-top: 12px;
-    margin-bottom: 24px;
-    text-align: justify;
-}
-.author-part{
-    position:relative;
-    top:10%;
+    width:110px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-family: "Outfit", sans-serif;  
+    text-align: center;
     
 }
-.about-the-author{
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    color: #0d0c0c;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    margin-bottom: 16px;
-    border-bottom: 2px solid #FF5722;
-    display: inline-block;
-    padding-bottom: 1px;
-}
-.author-bio{
-    padding:20px;
-    font-size: 20px;
-    line-height: 1.6;
-    position:relative;
-    top:0%;
-    right:8%;
 
-    margin-top: 12px;
-    margin-bottom: 24px;
-    text-align: justify;
+/* ////// for the add to card ///// */
+.card-info-bookinfo{
+    display: flex;
+    flex-direction: row;
+    gap:7px;
+    margin-top: 6px;
 }
-.info{
+.quatity-bookinfo{
+    width:110px;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+
+    display: flex;
+    flex-direction: row;
+    gap:27px;
+    text-align: center;
+    padding-top:13px;
+    padding-left: 14px;
+    
+}
+.add-to-card-bookinfo{
+    width:190px;
+    height: 50px;
+    margin-top: 0px;
+    font-family: "IBM Plex Sans"; 
+    font-size: 14px;
+    background-color:#000000;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    padding:0px;
+  
+
+}
+
+/* ///////////// more info about the book section//// */
+
+
+
+
+
+
+
+
+
+
+.futuristic-accordion {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    max-width: 100%!important;
+
+    padding-left:213px;
+    padding-top: 30px;
+    /* background-color: rgb(0, 0, 0); */
     position: relative;
-    top:25%;
+   
+   height: 600px;
+    min-width: 700px;
+    min-height: 600px;
+
+  }
+  
+  .accordion-item { 
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    width:83%;
+    margin-left: 30.5px;
+  }
+  .title-about-author{
+    color: #000000;
+  }
+  
+  .accordion-item.active {
+    border-color: rgba(100, 150, 255, 0.5);
+    box-shadow: 0 0 15px rgba(100, 150, 255, 0.2);
+  }
+  
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.2s ease;
+  }
+  
+  .accordion-header:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .accordion-header h3 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+  
+  .accordion-icon {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #000000;
+    transition: transform 0.3s ease;
+  }
+  
+  .accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+  }
+  
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .accordion-item.active .accordion-content {
+    max-height: 500px;
+  }
+  
+  .content-inner {
+    padding: 0 24px 24px;
+    line-height: 1.6;
+    /* background-color: red; */
+    font-family: "Outfit", sans-serif;  
+
+    margin:5px;
+    color:black;
+  }
+
+  .authorInfo{
+    display: flex;
+  }
+  .author-inner{
+    height: 350px!important;
+    display: flex;
+  }
+
+  .authorImg-bookinfo{
+    min-width:100%;
+    height: 100%;
+  }
+  .photo-author-bookinfo{
+    min-width:350px;
+  }
+  .about-author-bookinfo{
+    margin:18px;
+  }
+  .author-bio-bookinfo{
+    word-wrap: break-word;
+    font-family: "Outfit", sans-serif;  
+
+    margin:5px;
+    color:black;
+  }
+  .author-name-bookinfo{
+    font-family: "Outfit", sans-serif;  
+    font-size:34px;
+    margin:5px;
+    color:black;
+
+  }
+  .suggested-books{
+    display: flex;
+    flex-direction: row;
+    height: 330px;
+  }
+
+
+  /* //////////////// rating part /////////// */
+
+  /* /////// my rating input part////// */
+  .my-review{
+    border:0.1px solid #0000008c;
+
+    /* background-color: bisque; */
+   height: 350px;
+    padding-left:254px;
+    padding-top: 30px;
+    
+  }
+  .rating-title-bookinfo{
+    font-family: "Outfit", sans-serif;  
+    font-size:34px;
+    margin:2px 16px 13px 16px;
+    color:black;
+  }
+  .title-part-review{
+    font-family: "Outfit", sans-serif;  
+    font-size:30px;
+    margin:2px 16px 23px 16px;
+    color:#00000073;
+    font-weight: 400;
+  }
+
+  .give-review{
+
+    display: flex;
+    flex-direction: column;
+  }
+  .user-icon-review{
+    width:60px;
+    border-radius: 50px;
+    text-align: center;
+  
+  }
+  .photo-user-review{
+    margin-left: 410px;
+    height: 50px;
+    /* background-color: #8b5858; */
+  }
+  .question-review{
+    /* background-color: #46a641; */
+    font-family: "Outfit", sans-serif;  
+    font-size:34px;
+    margin:2px 16px 23px 317px;
+    color:black;
+    
+  }
+  .rating-bar{
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .box-my-review-stars{
+    margin:0px 23px 23px 317px;
+
+  }
+
+
+  .add-review{
+    width:190px;
+    height: 50px;
+    margin-top: 0px;
+    font-family: "IBM Plex Sans"; 
+    font-size: 14px;
+    background-color:#000000;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 10px 20px rgba(90, 49, 49, 0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    padding:0px;
+  
+   
+    margin-right: 44px;
+  }
+
+/* ////////////////////// community reviews///////// */
+.community-reviews{
+
+
+  padding-top: 30px;
+
+
+}
+
+.user-info-review-bookinfo{
+  display: flex;
+  flex-direction: row;
+  /* background-color: red; */
+}
+.user-icon-review-bookinfo{
+  width:50px;
+  border-radius: 60%;
+  margin-right:15px;
+}
+.user-name-review-bookinfo1{
+  padding:5px;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.review-attributes{
+  margin-top: 20px;
+  /* background-color: antiquewhite; */
+
+}
+.review-content{
+
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+.community-reviews-title{
+   padding-left: 246px;
+}
+
+.review-community-content{
+
+  padding-left: 257px;
+
+
+  width: 100% !important;
+}
+.custom-line {
+  width: 70%; /* Adjust length */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.376); /* Thickness & color */
+  margin: 20px auto; /* Centers it */
 }

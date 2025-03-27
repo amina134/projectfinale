@@ -7,15 +7,15 @@ export const fetchAllBooks = async () => {
 }
 
 export const postBooks = async (values) => {
-    const addAdvert = await axios.post(`http://localhost:${API_URL}/book/addBook`, { ...values });
+    const addBook = await axios.post(`http://localhost:${API_URL}/book/addBook`, { ...values });
 }
 
 export const updateBooks = async (id, values) => {
-    const updateAdvert = await axios.put(`http://localhost:${API_URL}/book/updateBook/${id}`, values);
+    const updateBook = await axios.put(`http://localhost:${API_URL}/book/updateBook/${id}`, values);
 }
 
 export const deleteBooks = async (id) => {
-    const deleteAdvert = await axios.delete(`http://localhost:${API_URL}/book/deleteBook/${id}`);
+    const deleteBook = await axios.delete(`http://localhost:${API_URL}/book/deleteBook/${id}`);
 }
 
 export const getUniqueBook = async (id) => {

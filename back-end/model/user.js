@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
-  username: {
+  userName: {
     type: String,
-    required: true,
+    required: [true, "Username is required"],
     trim: true,
     unique: true,
   },
@@ -23,6 +23,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ['admin', 'user', 'author'],
     default: 'user', 
+  },
+  bio: {
+    type: String,
+  },
+  imageUser:{
+     type:String,
+     default: 'reader-icon-default.png',
   },
   books: [
     {

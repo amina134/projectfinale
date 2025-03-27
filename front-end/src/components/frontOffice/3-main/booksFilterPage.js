@@ -127,12 +127,12 @@ const filterBooks=()=>{
 
     return(
         <div>
-        <NavBar/>
-        <div className='container '>
+        <NavBar className='navbar-filterpage'/>
+        <div className='container-filter-page '>
             {/* //// part of the filter options */}
             <div className='part1'>
                 
-            <h4 className='filter-by'>Filter By</h4>
+          
             <div className='scroll-down'>
             <h5 className='category'>Category </h5><hr className='line'/>
             <div className='category-buttons'>
@@ -200,33 +200,28 @@ const filterBooks=()=>{
             
             <button  className={`button-filter ${selectedMood.includes('happy') ? "active" : null}`} onClick={() => {handleMoodClick('happy');createChosenButtons('happy');}} 
             style={{
-                  backgroundColor: selectedMood.includes('happy')  ? "black" :' #fef9f2', 
-                  color: selectedMood.includes('happy') ? "white" : "black"
+                  backgroundColor: selectedMood.includes('happy')  ? "black" :'rgb(255, 255, 255)', 
+                 
                 }}>happy </button>
             <button className={`button-filter ${selectedMood.includes('romantic') ? "active" : null}`} onClick={() => {handleMoodClick('romantic');createChosenButtons('romantic');}}
                style={{
-                backgroundColor: selectedMood.includes('romantic' )? "black" :' #fef9f2', 
-                color: selectedMood.includes('romantic')? "white" : "black"
+                backgroundColor: selectedMood.includes('romantic' )? "black" :'rgb(255, 255, 255)', 
               }}>romantic</button>
             <button className={`button-filter ${selectedMood.includes('sad') ? "active" : null}`} onClick={() => {handleMoodClick('sad');createChosenButtons('sad');}}
                style={{
-                backgroundColor: selectedMood.includes('sad') ? "black" :' #fef9f2', 
-                color: selectedMood.includes('sad')? "white" : "black"
+                backgroundColor: selectedMood.includes('sad') ? "black" :'rgb(255, 255, 255)', 
               }}>sad</button>
             <button className={`button-filter ${  selectedMood.includes('adventurous') ? "active" : null}`} onClick={() => {handleMoodClick('adventurous');createChosenButtons('adventurous');}}
                style={{
-                backgroundColor: selectedMood.includes ('adventurous' )? "black" :' #fef9f2', 
-                color: selectedMood.includes('adventurous')? "white" : "black"
+                backgroundColor: selectedMood.includes ('adventurous' )? "black" :'rgb(255, 255, 255)', 
               }}>adventurous </button>
             <button  className={`button-filter ${  selectedMood.includes('inspirational') ? "active" : null}`} onClick={() =>{ handleMoodClick('inspirational');createChosenButtons('inspirational');}}
                style={{
                 backgroundColor: selectedMood.includes('inspirational') ? "black" :' #fef9f2', 
-                color: selectedMood.includes('inspirational')? "white" : "black"
               }}> inspirational</button>
             <button  className={`button-filter ${selectedMood.includes('uplifting' )? "active" : null}`} onClick={() =>{ handleMoodClick('uplifting');createChosenButtons('uplifting');}}
                style={{
                 backgroundColor: selectedMood.includes('uplifting') ? "black" :' #fef9f2', 
-                color: selectedMood.includes('uplifting')? "white" : "black"
               }}>uplifting</button>
          
 
@@ -346,10 +341,14 @@ const filterBooks=()=>{
               {/* ////////////////////////////////////////////////////////// part  2 of the products */}
             <div className='part2'>
                <div className='chosen'>
-                 {/* Render the dynamically created buttons */}
-                 {buttons.map((el1, index) => (
-               <button key={index} className='chosen-button'>{el1} <img className='cancel-image' src='./icons/cancel.png' onClick={()=>{setBookToDelete(el1);removeButton(el1)}}/></button>
-                 ))}
+                {buttons.length===0
+                ?<h3 className='everythings-filter'>All the products</h3>
+                :
+                 buttons.map((el1, index) => (
+                  <button key={index} className='chosen-button'>{el1} <img className='cancel-image' src='./icons/cancel.png' onClick={()=>{setBookToDelete(el1);removeButton(el1)}}/></button>
+                    ))
+                }
+              
                </div>
                <div className="item" >
                      {filteredBooks.map(el=>
