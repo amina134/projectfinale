@@ -20,8 +20,11 @@ import { fetchAllReviews } from './api/reviewApi';
 import { fetchAllUsers } from './api/usersApi';
 import { setReview } from './redux/reviewSlice';
 import { setUser } from './redux/userSlice';
+import UserFilterBooks from './components/backOffice/user/userHomepage/userFilterBooks';
 
 function App() {
+
+
   const books=useSelector(state=>state.bookElement)
   const dispatch =useDispatch();
   //part getting book data from database 
@@ -61,20 +64,23 @@ function App() {
 
    <Routes>
 
-    <Route path='/' element={<>  <HomePage/></>}/>
-    <Route path='/filterBooks' element={<FilterBooks/>}/>
-    <Route path='/bookInformation/:id' element={<DisplayBookInformation/>}/>
+    <Route path='/' element={<> <NavBar className='position-for-navbar' /> <HomePage/></>}/>
+    <Route path='/filterBooks' element={<> <NavBar className='navbar-filterpage'/><FilterBooks/></>}/>
+    <Route path='/bookInformation/:id' element={<> <NavBar/> <DisplayBookInformation/></>}/>
     <Route path='/login' element={<FilterBooks/>}/>
 
     
     {/* //// route to the admindashbord */}
     <Route path='/dashboardAdmin' element={<AdminDashboard/>}>
-
     </Route>
+  
       {/* //// route to the userZone*/}
-      <Route path="/userZone" element={<UserZone/>}>
+        <Route path="/userZone" element={<><UserZone />  </>}>
+        <Route index element={<HomePage/>} />
+        <Route path="books" element={<FilterBooks/>} />
+        <Route path="books/bookInformation/:id" element={<DisplayBookInformation />} />
+     </Route>
 
-</Route>
    </Routes>
   
    </>

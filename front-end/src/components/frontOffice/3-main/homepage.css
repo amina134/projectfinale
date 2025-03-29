@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   gap:0px;
+ 
   background-color: #000000;
 }
  .before-footer{
@@ -18,8 +19,9 @@
 }
 
 .position-for-navbar{
-  z-index: 200;
-  position: relative;
+
+  background-color: none;
+ 
 }
 .page {
     position: absolute;
@@ -35,6 +37,8 @@
     /* background: linear-gradient(to right, rgb(191, 221, 239), rgb(241, 191, 229)); */
   border-bottom-left-radius: 60px;
  border-bottom-right-radius: 60px;
+ margin-top: 0px;
+
  
 
   }
@@ -60,6 +64,7 @@
   .page1 {
     background-color: #f1b00f;
     color: #fff;
+
   }
   
   .page2 {

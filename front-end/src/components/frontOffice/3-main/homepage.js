@@ -15,6 +15,7 @@ import { FaYoutube } from "react-icons/fa";
 import Login from "../6-sign/login";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../1-header/footer";
+import HeaderUser from "../../backOffice/user/headerUser/headerUser";
 
 
 const  HomePage=()=> {
@@ -30,7 +31,7 @@ const  HomePage=()=> {
   const dispatch=useDispatch()
   const[reviewsArr,setReviewsArr]=useState(reviews)
   useEffect(()=>{setReviewsArr(reviews)},[reviews]) 
-  console.log('reviews from homepage',reviewsArr);
+  // console.log('reviews from homepage',reviewsArr);
 
   // redux part to get boooks
  
@@ -39,9 +40,10 @@ const  HomePage=()=> {
     useEffect(()=>{setBooksArr(books); } ,[books]);
     
   // reduux part to get users who wrote the reviews
-    const users=useSelector(state=>state.userElement);
+    const users=useSelector(state=>state.userElement.users);
     const[usersArr,setUsersArr]=useState(users);
     useEffect(()=>{setUsersArr(users); } ,[users]);
+    // console.log("users ARR",users)
 
 
   // get the books and users of the reviews
@@ -50,19 +52,19 @@ const  HomePage=()=> {
           const bookAndUsersWithReviews=reviewsArr.map((review)=>{
           const bookFound=booksArr.find((el)=>review.book===el._id)
           const userFound=usersArr.find((el)=>review.user===el._id)
-          console.log('book found',bookFound)
-          console.log('user found',userFound)
+          // console.log('book found',bookFound)
+          // console.log('user found',userFound)
           return {...review,
             book: bookFound ||{},
             user: userFound ||{}}
           })
-          console.log('books with reviews hhh',bookAndUsersWithReviews)
+          // console.log('books with reviews hhh',bookAndUsersWithReviews)
           setBooksAndUsersReview([...bookAndUsersWithReviews])} 
 
           findBooksAndUsers()
     },[reviewsArr,booksArr,booksAndUsersReview])
     
-    console.log(' BOOKs OF REVIEW',booksAndUsersReview)
+    // console.log(' BOOKs OF REVIEW',booksAndUsersReview)
     
    
 
@@ -112,7 +114,8 @@ const  HomePage=()=> {
     <div className="homepage">
     <div className="before-footer">
  <div className="one-lay" style={{background:background}}>
-      <NavBar className='position-for-navbar'/>
+      {/* <NavBar className='position-for-navbar'/> */}
+      {/* {isLoggedIn ? <HeaderUser user={user} /> : <NavBar className='position-for-navbar' />} */}
      <div className="arrows">
           {/* for the arrow up */}
             <div className=" button-wrapper1">
@@ -131,7 +134,7 @@ const  HomePage=()=> {
             </div>
 
        
-          </div>
+       </div>
      
    <TransitionGroup className="transition-wrapper">
      <CSSTransition

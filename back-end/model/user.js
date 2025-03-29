@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema({
   },
   imageUser:{
      type:String,
-     default: 'reader-icon-default.png',
+     default: '/logos/reader-icon-default.png',
   },
   books: [
     {

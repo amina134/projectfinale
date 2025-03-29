@@ -35,6 +35,7 @@ const bookSchema =  mongoose.Schema({
   mood:{
     type:String
   },
+  stock: { type: Number, default: 5 },
   purchases: { type: Number, default: 0 }, // Track popularity
 });
 

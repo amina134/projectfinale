@@ -27,7 +27,7 @@ function NavBar(){
        
       
            <ul  className="nav-bar">
-        <li  className="nav-item"><a href="#">Home</a></li>
+        <li  className="nav-item"><Link to="/"><a href="#">Home</a></Link></li>
             {/*  nav item books  */}
            
             <li className="nav-item"> 

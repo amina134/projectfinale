@@ -6,25 +6,33 @@
 
 /* ////////////////////////////////////////// BEGINNING OF PART1/////////////////////////////////////////////////////// */
 .container-filter-page{
-    display: flex;
-    height:100%;
-    width:100%;
-    border: none;
 
+  margin-bottom: 30px;
+
+  width: 100%; /* Full viewport width */
+  height: 83vh; /* Full viewport height */
+  display: flex; 
   
- 
+ overflow: hidden;
+    border: none;
+}
+.blurpage{
+filter: blur(2px);
 }
 
 .scroll-down{
-    height: 90vh; /* Set height to half the viewport height (or adjust to your desired size) */
+  
     margin: 0px;
-  overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto; 
+
+
 
 }
 
-.part1{
+.part1-books{
     flex: 0.65;
-    margin-top: 45px;
+
+    overflow-y: auto; 
     
 }
 
@@ -209,13 +217,18 @@ label {
 /* //////////////////////////////////// END OF PART 1 //////////////////////////////////////////////////////  */
 /* //////////////////////////////////// beginning  OF PART 2 //////////////////////////////////////////////////////  */
 
-.part2{
+.part2-books{
   flex: 2;
   /* background-color: blue; */
-  margin-top :23px;
+  overflow-x: hidden;
   display: flex;
+  overflow-y: auto; 
+
   flex-direction: column;
- max-width: 75%;
+  
+ 
+
+ z-index: 1!important;
 }
 .item{
   display: flex;

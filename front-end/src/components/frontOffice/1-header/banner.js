@@ -39,7 +39,7 @@ const DealBanner=()=>{
     return(
           <div className="banner">
          <div className="bannerContainer ">
-           <a href="" className={`bannerText animate__animated ${animationClass}`}>
+           <a href="" className={`bannerText1 animate__animated ${animationClass}`}>
           {currentDeal}
         </a>      </div>   
           </div>

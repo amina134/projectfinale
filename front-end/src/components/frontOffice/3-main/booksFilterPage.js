@@ -4,9 +4,12 @@ import './booksFilterPage.css';
 import Slider from 'react-slider'
 import { useDispatch, useSelector } from 'react-redux';
 import BookCard from '../2-hero/bookCard';
+import HeaderUser from '../../backOffice/user/headerUser/headerUser';
+import CartExpress from '../cartItems/cartExpress';
+import Footer from '../1-header/footer';
 const MIN=2
 const MAX=100
-function FilterBooks(){
+function FilterBooks({ isLoggedIn,user}){
   /////// redux part for bringing the books
     const books =useSelector(state=>state.bookElement)
      const dispatch=useDispatch()
@@ -122,15 +125,24 @@ const filterBooks=()=>{
           
 
         };
+
+
+
+        //////****************************** */ add to cart/////////////////////////////////////
+        const { isOpen } = useSelector((state) => state.cartElement);
        
+          
     
 
     return(
         <div>
-        <NavBar className='navbar-filterpage'/>
-        <div className='container-filter-page '>
+      
+          {/* {isLoggedIn ? <HeaderUser user={user} /> : <NavBar className='navbar-filterpage'/>} */}
+
+          {isOpen && <CartExpress/>}
+        <div className={`${!isOpen ?'container-filter-page' :'container-filter-page blurpage'} `}>
             {/* //// part of the filter options */}
-            <div className='part1'>
+            <div className='part1-books'>
                 
           
             <div className='scroll-down'>
@@ -339,7 +351,7 @@ const filterBooks=()=>{
             </div>
           
               {/* ////////////////////////////////////////////////////////// part  2 of the products */}
-            <div className='part2'>
+            <div className='part2-books'>
                <div className='chosen'>
                 {buttons.length===0
                 ?<h3 className='everythings-filter'>All the products</h3>
@@ -360,6 +372,9 @@ const filterBooks=()=>{
             </div>
 
 
+        </div>
+        <div>
+      
         </div>
         </div>
     )

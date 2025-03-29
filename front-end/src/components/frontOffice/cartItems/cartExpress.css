@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+@keyframes slideIn {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0%;
+  }
+}
+@keyframes slideOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+
+
+
+.cart-dropdown{
+  
+  box-shadow: 0 0 10px rgba(27, 14, 14, 0.227);
+    font-family: "Outfit", sans-serif;
+    animation: slideIn 0.3s ease-out;
+    position: absolute;
+    right:0%;
+    width:400px;
+    height: 80vh;
+
+    background-color: rgb(255, 255, 255);
+    z-index: 4;
+    overflow-y: auto; 
+    overflow-x: hidden;
+
+
+
+ 
+
+
+
+}
+.cart-dropdown.active{
+  animation: slideIn forwards;
+
+}
+
+.shopping-cart-express-title{
+  font-family: "Outfit", sans-serif;
+  font-size: 24px;
+  margin-left: 8px;
+  font-weight: 300;
+  margin-top: 0px;
+ 
+ 
+}
+.nav-cart-express{
+  position: sticky;  /* Sticks it to the top while scrolling */
+  top: 0;  /* Keeps it at the very top */
+  background-color: white;  /* Ensures visibility */
+  z-index: 1000;  /* Keeps it above other content */
+  /* Adds spacing */
+  display: flex;
+  height: 50px;
+  align-items: center;
+  border-bottom: 1px solid #ddd; /* Optional: Adds a separator */
+  
+
+}
+.view-bag-footer-express{
+  position: sticky;
+  top:100%;
+  align-items: center;
+  width: 100%;
+  border-top: 1px solid #ddd; 
+  background-color: white;
+}
+.view-bag-but{
+  background-color: black;
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+  width:370px;
+  margin-left:14px;
+  color: white;
+  margin-right:10px;
+  font-weight: 300;
+ 
+ 
+
+
+}
+
+.close-add-cart{
+  font-family: 'icomoon' !important;
+  font-size: 1.5rem;
+  color:rgba(0, 0, 0, 0.681);
+  transition: 0.3s;
+  background-color: transparent;
+  position: relative;
+   top:-1.5%; 
+ 
+  left: 46%!important; 
+
+   
+  z-index: 20;
+ 
+}
+
+.close-add-cart:hover {
+  font-size: 1.7rem;
+  color:#E59560;
+  rotate: 180deg;
+}
+
+
+.add-to-cart-imgbook{
+    width:110px;
+    border-radius: 3%;
+}
+.items-in-cart{
+   
+    margin-block:2px;
+    margin-left: 6px;
+    margin-right: 6px;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.layout-book-cart:hover{
+    box-shadow: 0 0 10px rgba(199, 226, 251, 0.933);
+}
+.layout-book-cart{
+    /* background-color: #f0eaea; */
+
+    box-shadow: 0 0 10px rgba(27, 14, 14, 0.227);
+    display: flex;
+    flex-direction: row;
+    margin:6px;
+}
+.book-title-cart-express{
+    font-size: 23px;
+}
+.book-info-cart-express{
+   width:300px;
+   display: flex;
+   flex-direction: column;
+    margin:10px;
+    gap:5px;
+}
+.book-price-cart-express{
+    font-size: 23px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif!important;
+}
+.delete-book-cart-express{
+    width:30px
+}
+
+.delete-icon-cart-express{
+  width:30px;
+}
+.like-cart-express{
+    position: relative!important;
+
+    left:47%;
+    top:1%;
+    font-size: 24px;
+    font-weight:100;
+
+}
+.quantity-cart-express{
+    margin:10px;
+    width: 300px,!important;
+}
+
+.delete-icon-cart-express, .like-cart-express{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .delete-icon-cart-express:hover{
+    color:rgb(4, 72, 22);
+  }
+  .like-cart-express:hover{
+    color:#E59560;
+  }
+
+.bag-express-empty{
+  font-family: "Outfit", sans-serif;
+  font-size: 20px;
+
+  font-weight: 500;
+  margin: 20px;
+}
+
+  /* Custom scrollbar */
+  .cart-dropdown::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .cart-dropdown::-webkit-scrollbar-thumb {
+    background: gray;
+    border-radius: 10px;
+  }
+  
+  .cart-dropdown::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  .plus-sign:disabled,
+  .minus-sign:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: grey;
+    background-color: #b84646;
+  }
+  .plus-sign,
+  .minus-sign{
+   cursor: pointer;
+  }
+
+
+  .view-bag-footer-express{
+
+  }

@@ -52,7 +52,7 @@ const DisplayBookInformation=()=>{
 
 
     ///////// redux to get the users 
-        const users=useSelector(state=>state.userElement);
+        const users=useSelector(state=>state.userElement.users);
         const[bookAuthor,setBookAuthor]=useState({})
         const[usersArr,setUsersArr]=useState(users);
         const [writerReview,setWriterReview]=useState([]);
@@ -162,9 +162,7 @@ const DisplayBookInformation=()=>{
 
    return(
     <div className="bookInformation-page"> 
-    <div>
-        <NavBar/>
-    </div>
+   
     <div className="container-information-informationCard">
  
     <div className="part1">

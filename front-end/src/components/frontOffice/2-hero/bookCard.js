@@ -1,4 +1,5 @@
 
+import { useLocation } from 'react-router-dom';
 
 import { useState, useEffect,startTransition  } from "react";
 import './bookCard.css'; // Import the CSS file
@@ -7,8 +8,20 @@ import { IoMdHeart } from "react-icons/io";
 import { FaCartPlus } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
+import { addToCart,toggleCart } from '../../../redux/cartSlice';
+import CartExpress from '../cartItems/cartExpress';
 
-const BookCard = ({ title, user, bookImage, description, _id, price,genre,mood }) => {
+const BookCard = ({ title, user, bookImage, description, _id, price,genre,mood,stock}) => {
+  const location = useLocation();
+  const isInUserZone = location.pathname.startsWith('/userZone');
+  
+  const linkPath = isInUserZone 
+    ? `/userZone/books/bookInformation/${_id}`
+    : `/bookInformation/${_id}`;
+
+
+    
+
    const[isBlack,setIsBlack]=useState(false)
 
    ////// hovering over the book
@@ -25,7 +38,7 @@ const BookCard = ({ title, user, bookImage, description, _id, price,genre,mood }
    }
 
    ///////// redux to get the users 
-    const users=useSelector(state=>state.userElement);
+    const users=useSelector(state=>state.userElement.users);
     const[bookAuthor,setBookAuthor]=useState({})
     const[usersArr,setUsersArr]=useState(users);
     useEffect(()=>{setUsersArr(users); } ,[users]);
@@ -44,18 +57,41 @@ const BookCard = ({ title, user, bookImage, description, _id, price,genre,mood }
         findUser(user)
          },[usersArr])
    
+    //// add to cart functionality 
+    const dispatch=useDispatch();
+    const { currentUser } = useSelector((state) => state.userElement);
+    console.log("BookCard currentUser:", currentUser);
+
+    const {isOpen}=useSelector((state) => state.cartElement);
+    const handleAddTocart=()=>{
+      if(!currentUser){
+        alert("Please log in to add items to your cart!");
+        return;
+      }
+      dispatch(addToCart({ _id,title,price,bookImage,stock}))
+      if(!isOpen){
+        dispatch(toggleCart());   
+    
+      }
+    
+
+    };
+
+      //  const { isOpen } = useSelector((state) => state.cartElement);
+   
 
   return (
         
     <div className='book-box'>
+        
       <div className="heart-icon1"    onClick={changeColor}>  
      {isBlack ? <IoMdHeart color="black"/>  :<CiHeart/>} 
       </div>
      
-      <button className='but2'> <span className='button-content'>ADD TO BAG</span></button>
+      <button className='but2' onClick={handleAddTocart}> <span className='button-content'>ADD TO BAG</span></button>
       
     
-      <Link className="link" to={`/bookInformation/${_id}`}> 
+      <Link className="link" to={linkPath}> 
       <div className="mobile-layout"
        onMouseEnter={handleMouseEnter}
        onMouseLeave={handleMouseLeave}>
@@ -89,8 +125,6 @@ const BookCard = ({ title, user, bookImage, description, _id, price,genre,mood }
             <div className="icon-down">
                 <i className="fas fa-chevron-down"></i>
               </div>
-            
-             
             <div className="body">
             <p className='price' >{price} dt</p>
               {/* <h3 className='genre'>{genre}</h3> */}
