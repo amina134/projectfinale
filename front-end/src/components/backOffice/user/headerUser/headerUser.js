@@ -16,7 +16,7 @@ import { setUser } from "../../../../redux/userSlice";
 
 const HeaderUser=({user})=>{
     
-    console.log("user login inouuuuuu",user)
+    // console.log("user login inouuuuuu",user)
  
     return(
         <div className="headerUser">

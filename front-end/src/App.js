@@ -21,6 +21,7 @@ import { fetchAllUsers } from './api/usersApi';
 import { setReview } from './redux/reviewSlice';
 import { setUser } from './redux/userSlice';
 import UserFilterBooks from './components/backOffice/user/userHomepage/userFilterBooks';
+import FullCart from './components/frontOffice/cartItems/fullCart';
 
 function App() {
 
@@ -45,6 +46,9 @@ function App() {
       // console.log('users from app.js',data)
       dispatch(setUser(data.users))
      }
+ 
+
+
   
 
 
@@ -64,10 +68,10 @@ function App() {
 
    <Routes>
 
-    <Route path='/' element={<> <NavBar className='position-for-navbar' /> <HomePage/></>}/>
+    <Route path='/' element={< >  <NavBar className='position-for-navbar' /> <HomePage/></>}/>
     <Route path='/filterBooks' element={<> <NavBar className='navbar-filterpage'/><FilterBooks/></>}/>
     <Route path='/bookInformation/:id' element={<> <NavBar/> <DisplayBookInformation/></>}/>
-    <Route path='/login' element={<FilterBooks/>}/>
+    {/* <Route path='/login' element={<FilterBooks/>}/> */}
 
     
     {/* //// route to the admindashbord */}
@@ -75,10 +79,12 @@ function App() {
     </Route>
   
       {/* //// route to the userZone*/}
-        <Route path="/userZone" element={<><UserZone />  </>}>
+        <Route path="/userZone" element={<UserZone />}>
         <Route index element={<HomePage/>} />
+        <Route path="myBag" element={<FullCart/>}/>
         <Route path="books" element={<FilterBooks/>} />
         <Route path="books/bookInformation/:id" element={<DisplayBookInformation />} />
+      
      </Route>
 
    </Routes>

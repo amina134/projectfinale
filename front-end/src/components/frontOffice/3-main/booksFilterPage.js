@@ -30,7 +30,7 @@ function FilterBooks({ isLoggedIn,user}){
     
     };
   
-     console.log('buttons',buttons);
+    //  console.log('buttons',buttons);
 
     //  console.log('SelectedCategory',selectedCategory)
     //  console.log('book introooooooo ', books[0].genre)
@@ -57,10 +57,10 @@ const filterBooks=()=>{
   
   // filter by category
   if(selectedCategory.length >0) {
-    console.log('filtered initiale',filtered);
+    // console.log('filtered initiale',filtered);
  filtered=filtered.filter((book)=>selectedCategory.includes(book.genre))
      
-   console.log('filtered books genre:',filtered);
+  //  console.log('filtered books genre:',filtered);
   }
    // filter by mood
   if (selectedMood.length >0){
@@ -87,13 +87,13 @@ const filterBooks=()=>{
   
   setFilteredBooks(filtered)
 
-  console.log('filtered finaaaaaaal',filtered)
+  // console.log('filtered finaaaaaaal',filtered)
 
 }
 /*/*///*/*/*/*/*/*/*// radio filter category //*//*/*/*/*/*/*/*//*/*/**/ */
         const handleCategoryChange=event=>  {
           const {value}=event.target
-          console.log('value of genre',{value})
+          // console.log('value of genre',{value})
           setSelectedCategory((prev)=>
           prev.includes(value) ? prev.filter((cat)=>cat !== value) :[...prev,value]);
 
@@ -117,10 +117,10 @@ const filterBooks=()=>{
          /////////////// remove button from an array 
 
          const removeButton = (value) => {
-          console.log('filtered books before removing',filteredBooks)
-          console.log('the value to remove is ',value)
+          // console.log('filtered books before removing',filteredBooks)
+          // console.log('the value to remove is ',value)
           setFilteredBooks((prevBooks) => prevBooks.filter((cat) => cat !== value));
-          console.log('filtered books after removing',filteredBooks)
+          // console.log('filtered books after removing',filteredBooks)
           setButtons((prevButtons) => prevButtons.filter((cat) => cat !== value));
           
 

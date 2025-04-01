@@ -8,6 +8,7 @@ const connectDb =require('./config/connectdb')//importing the connect db
 const book=require('./model/book')// importing the book model
 const bookRoute=require('./routes/bookRoutes') //importing the book route
 const userRoute=require('./routes/userRoutes') // importing the user route
+const cartRoute=require('./routes/cartRoutes')
 app.use(cors())
 const path = require('path');
 const reviewRoute = require('./routes/reviewRoutes')// importing the review route
@@ -30,6 +31,8 @@ app.use('/book',bookRoute)
 //principal route for the reviews
 app.use('/review',reviewRoute)
 
+//principal route for the cart 
+app.use('/cart',cartRoute)
 
 
 console.log("Before starting server");

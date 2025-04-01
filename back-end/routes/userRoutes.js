@@ -2,11 +2,10 @@ const express = require('express');
 const userRoute = express.Router();
 const { getAllUsers, addUser, getUserById, updateUser, deleteUser, signIn, signUp } = require('../controllers/userControllers');
 
-const { AuthValidation } = require('../middleware/AuthValidation');
+const { AuthValidation } = require('../middleware/authValidation');
 const { SignInValidation, SignUpValidation, Validation } = require('../middleware/SignUpValidation');
 
 userRoute.use(express.json());
-
 //http://localhost:4000/user/allUsers
 userRoute.get('/allUsers', getAllUsers);
 //http://localhost:4000/user/addUser
@@ -26,5 +25,8 @@ userRoute.get('/myaccount', AuthValidation, async (req, res) => {
     res.send(res.user);
     console.log("this is the req :", res.user);
 })
+
+
+
 
 module.exports = userRoute;

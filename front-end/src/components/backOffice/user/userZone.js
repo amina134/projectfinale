@@ -10,8 +10,8 @@ import HomePage from "../../frontOffice/3-main/homepage";
 import { Outlet } from "react-router-dom";
 import NavBar from "../../frontOffice/1-header/navBar";
 import Footer from "../../frontOffice/1-header/footer";
-
-
+import {setCart}from"../../../redux/cartSlice"
+import { getCartByUserId } from "../../../api/cartApi";
 function UserZone(){
     const user = useSelector((state) => state.userElement.currentUser);
     const { currentUser, token } = useSelector((state) => state.userElement);
@@ -23,19 +23,23 @@ function UserZone(){
         const token = localStorage.getItem('token');
         if (token) {
             const data = await fetchAccount();
-            console.log("data user logged in",data)
+            // console.log("data user logged in",data)
             dispatch(setCurrentUser(data));
             dispatch(setToken(token));
         }
       
     };
 
+  
+      
+
     useEffect(() => {
         getAuth();
+
    
     }, [dispatch]);
 
-    console.log("Current Redux State:", { currentUser, token });
+    // console.log("Current Redux State:", { currentUser, token });
  
     return(
         <div>
