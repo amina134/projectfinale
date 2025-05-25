@@ -18,5 +18,5 @@ A modern, fully functional e-commerce website for book lovers, built with the ME
 
 🔐 Authentication – Secure login/signup (JWT-based or session)
 
-📦 Admin Dashboard – Manage books, orders, and users (optional if added)
+
 
